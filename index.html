@@ -118,6 +118,38 @@ img{max-width:100%;display:block}
 .product-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.4}
 .product-company{font-size:12px;color:var(--ink-soft)}
 
+/* PRODUCT DETAIL */
+#productDetail{display:none;padding-bottom:60px}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.pd-img-main{width:100%;aspect-ratio:4/3;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.pd-img-main img{width:100%;height:100%;object-fit:cover}
+.pd-img-main .img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-soft);font-size:13px;text-align:center;padding:20px;width:100%;height:100%}
+.pd-img-main .img-placeholder svg{opacity:.25}
+.pd-thumbnails{display:flex;gap:8px;flex-wrap:wrap}
+.pd-thumb{width:64px;height:64px;border-radius:8px;border:2px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .2s;flex-shrink:0}
+.pd-thumb:hover,.pd-thumb.active{border-color:var(--green)}
+.pd-thumb img{width:100%;height:100%;object-fit:cover}
+.pd-info{display:flex;flex-direction:column;gap:16px}
+.pd-eyebrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pd-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1.3}
+.pd-company{font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
+.pd-divider{height:1px;background:var(--border)}
+.pd-section-label{font-size:11px;font-weight:600;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.pd-desc{font-size:14px;color:var(--ink-mid);line-height:1.75;background:var(--bg);border-radius:8px;padding:14px 16px}
+.pd-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pd-tag{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);color:var(--ink-mid);background:var(--surface)}
+.pd-vip-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:10px;background:var(--ink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s;border:none;font-family:'Inter',sans-serif}
+.pd-vip-btn:hover{opacity:.85}
+@media(max-width:768px){.pd-grid{grid-template-columns:1fr}}
+
+/* COMPANY BIO */
+.company-tagline{font-size:11px;color:var(--ink-soft);line-height:1.4;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);text-align:left}
+.company-intro-box{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:flex;gap:20px;align-items:flex-start}
+.company-intro-text{}
+.company-intro-text p{font-size:13px;color:var(--ink-mid);line-height:1.75}
+.company-intro-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.company-intro-badge{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--surface);border:1px solid var(--border);color:var(--ink-soft)}
+
 /* COMPANY DETAIL */
 .company-detail-header{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;align-items:center;gap:24px;margin-bottom:28px}
 .company-detail-logo{width:96px;height:96px;border-radius:16px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink-soft);font-weight:700;flex-shrink:0;overflow:hidden;text-align:center;padding:6px}
@@ -325,78 +357,78 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
       <h2 class="section-title" data-en="About This Event" data-kr="사업 개요">About This Event</h2>
     </div>
     <div class="about-hero">
-      <div class="about-eyebrow">🏆 VIP Hosted Buyer Program · 2026</div>
-      <h2>Korea's Best Health Brands,<br/><em>Matched to Your Sourcing Needs</em></h2>
-      <p class="about-hero-sub">This is not a trade show where you collect business cards. Every supplier in this showcase has been pre-verified by Korea Health Functional Food Association (KHFF). You meet only the companies that fit your sourcing profile — saving your time and accelerating your decisions.</p>
+      <div class="about-eyebrow">🏆 <span data-en="VIP Hosted Buyer Program · 2026" data-kr="VIP 초청 바이어 프로그램 · 2026">VIP Hosted Buyer Program · 2026</span></div>
+      <h2 data-en="Korea's Best Health Brands,<br/><em>Matched to Your Sourcing Needs</em>" data-kr="한국 최고의 건강 브랜드,<br/><em>귀사의 소싱 니즈에 맞춰 매칭해드립니다</em>">Korea's Best Health Brands,<br/><em>Matched to Your Sourcing Needs</em></h2>
+      <p class="about-hero-sub" data-en="This is not a trade show where you collect business cards. Every supplier in this showcase has been pre-verified by Korea Health Functional Food Association (KHFF). You meet only the companies that fit your sourcing profile — saving your time and accelerating your decisions." data-kr="명함만 교환하는 박람회가 아닙니다. 이 쇼케이스의 모든 공급사는 한국건강기능식품협회(KHFF)의 사전 검증을 통과했습니다. 귀사의 소싱 프로필에 맞는 기업만을 만나 시간을 절약하고 의사결정을 가속화하세요.">This is not a trade show where you collect business cards. Every supplier in this showcase has been pre-verified by Korea Health Functional Food Association (KHFF). You meet only the companies that fit your sourcing profile — saving your time and accelerating your decisions.</p>
       <div class="about-stats">
-        <div class="about-stat"><div class="about-stat-num">25</div><div class="about-stat-label">Verified Korean suppliers</div></div>
-        <div class="about-stat"><div class="about-stat-num">5</div><div class="about-stat-label">VIP buyers invited to Seoul</div></div>
-        <div class="about-stat"><div class="about-stat-num">Aug 25</div><div class="about-stat-label">Seoul COEX · 1:1 sessions</div></div>
-        <div class="about-stat"><div class="about-stat-num">Free</div><div class="about-stat-label">Airfare & accommodation</div></div>
+        <div class="about-stat"><div class="about-stat-num">25</div><div class="about-stat-label" data-en="Verified Korean suppliers" data-kr="검증된 한국 공급사">Verified Korean suppliers</div></div>
+        <div class="about-stat"><div class="about-stat-num">5</div><div class="about-stat-label" data-en="VIP buyers invited to Seoul" data-kr="서울 초청 VIP 바이어">VIP buyers invited to Seoul</div></div>
+        <div class="about-stat"><div class="about-stat-num">Aug 25</div><div class="about-stat-label" data-en="Seoul COEX · 1:1 sessions" data-kr="서울 코엑스 · 1:1 상담">Seoul COEX · 1:1 sessions</div></div>
+        <div class="about-stat"><div class="about-stat-num" data-en="Free" data-kr="무료">Free</div><div class="about-stat-label" data-en="Airfare & accommodation" data-kr="항공편 및 숙박 지원">Airfare & accommodation</div></div>
       </div>
     </div>
 
     <div class="about-section">
-      <div class="about-section-title">🎁 What You Get as a VIP Buyer</div>
+      <div class="about-section-title" data-en="🎁 What You Get as a VIP Buyer" data-kr="🎁 VIP 바이어 혜택">🎁 What You Get as a VIP Buyer</div>
       <div class="about-cards">
         <div class="about-card">
           <div class="about-card-icon" style="background:#E6F7F3">✈️</div>
-          <h4>Airfare & Seoul Accommodation Covered</h4>
-          <p>Invited VIP buyers receive full support for international flights and hotel stay in Seoul. Zero out-of-pocket cost to attend the most curated K-health sourcing event of the year.</p>
+          <h4 data-en="Airfare & Seoul Accommodation Covered" data-kr="항공편 및 서울 숙박 전액 지원">Airfare & Seoul Accommodation Covered</h4>
+          <p data-en="Invited VIP buyers receive full support for international flights and hotel stay in Seoul. Zero out-of-pocket cost to attend the most curated K-health sourcing event of the year." data-kr="초청된 VIP 바이어에게는 국제 항공편과 서울 숙박이 전액 지원됩니다. 비용 부담 없이 올해 가장 엄선된 K-헬스 소싱 행사에 참여하세요.">Invited VIP buyers receive full support for international flights and hotel stay in Seoul. Zero out-of-pocket cost to attend the most curated K-health sourcing event of the year.</p>
         </div>
         <div class="about-card">
           <div class="about-card-icon" style="background:#EEEDFE">🎯</div>
-          <h4>Pre-matched 1:1 Sessions</h4>
-          <p>You won't waste time with irrelevant suppliers. Based on your sourcing profile, we pre-match you with the most compatible companies. Each session is 30 minutes with a dedicated interpreter.</p>
+          <h4 data-en="Pre-matched 1:1 Sessions" data-kr="사전 매칭 1:1 상담">Pre-matched 1:1 Sessions</h4>
+          <p data-en="You won't waste time with irrelevant suppliers. Based on your sourcing profile, we pre-match you with the most compatible companies. Each session is 30 minutes with a dedicated interpreter." data-kr="관련 없는 공급사로 시간을 낭비하지 않습니다. 소싱 프로필을 기반으로 가장 적합한 기업을 사전 매칭해드립니다. 각 세션은 30분, 전담 통역사가 배치됩니다.">You won't waste time with irrelevant suppliers. Based on your sourcing profile, we pre-match you with the most compatible companies. Each session is 30 minutes with a dedicated interpreter.</p>
         </div>
         <div class="about-card">
           <div class="about-card-icon" style="background:#FDF4E7">📄</div>
-          <h4>Post-meeting Business Support</h4>
-          <p>Our export advisors support you beyond the meeting day — from technical dossiers and COA requests to FOB/CIF quotations and regulatory guidance. We stay until the deal is done.</p>
+          <h4 data-en="Post-meeting Business Support" data-kr="미팅 후 비즈니스 지원">Post-meeting Business Support</h4>
+          <p data-en="Our export advisors support you beyond the meeting day — from technical dossiers and COA requests to FOB/CIF quotations and regulatory guidance. We stay until the deal is done." data-kr="수출 전문가가 미팅 이후에도 지원합니다. 기술 서류, COA 요청부터 FOB/CIF 견적, 규제 가이드까지 — 계약 성사까지 함께합니다.">Our export advisors support you beyond the meeting day — from technical dossiers and COA requests to FOB/CIF quotations and regulatory guidance. We stay until the deal is done.</p>
         </div>
         <div class="about-card">
           <div class="about-card-icon" style="background:#FAECE7">🔬</div>
-          <h4>KHFF-verified Suppliers Only</h4>
-          <p>Every participating company is a member of the Korea Health Functional Food Association and has passed compliance screening. You source from credible, export-ready manufacturers.</p>
+          <h4 data-en="KHFF-verified Suppliers Only" data-kr="KHFF 인증 공급사만 참가">KHFF-verified Suppliers Only</h4>
+          <p data-en="Every participating company is a member of the Korea Health Functional Food Association and has passed compliance screening. You source from credible, export-ready manufacturers." data-kr="모든 참가 기업은 한국건강기능식품협회 회원사로서 컴플라이언스 심사를 통과했습니다. 신뢰할 수 있고 수출 준비된 제조사로부터 소싱하세요.">Every participating company is a member of the Korea Health Functional Food Association and has passed compliance screening. You source from credible, export-ready manufacturers.</p>
         </div>
       </div>
     </div>
 
     <div class="about-section">
-      <div class="about-section-title">📅 How It Works</div>
+      <div class="about-section-title" data-en="📅 How It Works" data-kr="📅 참여 절차">📅 How It Works</div>
       <div class="about-steps">
         <div class="about-step">
           <div class="about-step-num">1</div>
-          <h4>Browse & Apply</h4>
-          <p>Explore the catalog, select categories of interest, and submit your VIP Matching application.</p>
+          <h4 data-en="Browse & Apply" data-kr="카탈로그 탐색 & 신청">Browse & Apply</h4>
+          <p data-en="Explore the catalog, select categories of interest, and submit your VIP Matching application." data-kr="카탈로그를 탐색하고 관심 카테고리를 선택한 후 VIP 매칭 신청서를 제출하세요.">Explore the catalog, select categories of interest, and submit your VIP Matching application.</p>
         </div>
         <div class="about-step">
           <div class="about-step-num">2</div>
-          <h4>Get Matched</h4>
-          <p>Our team reviews your profile and pre-matches you with the most relevant suppliers.</p>
+          <h4 data-en="Get Matched" data-kr="매칭 확정">Get Matched</h4>
+          <p data-en="Our team reviews your profile and pre-matches you with the most relevant suppliers." data-kr="담당팀이 프로필을 검토하고 가장 적합한 공급사와 사전 매칭해드립니다.">Our team reviews your profile and pre-matches you with the most relevant suppliers.</p>
         </div>
         <div class="about-step">
           <div class="about-step-num">3</div>
-          <h4>Fly to Seoul</h4>
-          <p>Travel supported. Arrive at COEX on Aug 25 for your confirmed 1:1 meeting schedule.</p>
+          <h4 data-en="Fly to Seoul" data-kr="서울로 오세요">Fly to Seoul</h4>
+          <p data-en="Travel supported. Arrive at COEX on Aug 25 for your confirmed 1:1 meeting schedule." data-kr="항공편 지원. 8월 25일 코엑스에서 확정된 1:1 미팅 일정을 진행합니다.">Travel supported. Arrive at COEX on Aug 25 for your confirmed 1:1 meeting schedule.</p>
         </div>
         <div class="about-step">
           <div class="about-step-num">4</div>
-          <h4>Close the Deal</h4>
-          <p>Expert advisors on-site to support negotiation, follow-up, and contract facilitation.</p>
+          <h4 data-en="Close the Deal" data-kr="계약 성사">Close the Deal</h4>
+          <p data-en="Expert advisors on-site to support negotiation, follow-up, and contract facilitation." data-kr="현장 전문가가 협상, 후속 조치, 계약 체결을 지원합니다.">Expert advisors on-site to support negotiation, follow-up, and contract facilitation.</p>
         </div>
       </div>
     </div>
 
     <div class="about-section">
-      <div class="about-section-title">📍 Event Details</div>
+      <div class="about-section-title" data-en="📍 Event Details" data-kr="📍 행사 정보">📍 Event Details</div>
       <div class="about-event-info">
-        <div class="about-info-item"><label>Date & Time</label><span>August 25, 2026 (Tue) · 10:00 – 17:00</span></div>
-        <div class="about-info-item"><label>Venue</label><span>COEX, Seoul, South Korea</span></div>
-        <div class="about-info-item"><label>Format</label><span>1:1 Pre-matched sessions · 30 min each · Dedicated interpreter</span></div>
-        <div class="about-info-item"><label>Organizer</label><span>Korea Health Functional Food Association (KHFF)</span></div>
-        <div class="about-info-item"><label>Implemented by</label><span>Tridge Co., Ltd.</span></div>
-        <div class="about-info-item"><label>Contact</label><span>geonyeop.lim@tridge.com · andrew.kim@tridge.com</span></div>
+        <div class="about-info-item"><label data-en="Date & Time" data-kr="일시">Date & Time</label><span data-en="August 25, 2026 (Tue) · 10:00 – 17:00" data-kr="2026년 8월 25일 (화) · 10:00 – 17:00">August 25, 2026 (Tue) · 10:00 – 17:00</span></div>
+        <div class="about-info-item"><label data-en="Venue" data-kr="장소">Venue</label><span data-en="COEX, Seoul, South Korea" data-kr="서울 코엑스 (COEX)">COEX, Seoul, South Korea</span></div>
+        <div class="about-info-item"><label data-en="Format" data-kr="형태">Format</label><span data-en="1:1 Pre-matched sessions · 30 min each · Dedicated interpreter" data-kr="1:1 사전 매칭 상담 · 30분/회 · 전담 통역사">1:1 Pre-matched sessions · 30 min each · Dedicated interpreter</span></div>
+        <div class="about-info-item"><label data-en="Organizer" data-kr="주관">Organizer</label><span>Korea Health Functional Food Association (KHFF) · 한국건강기능식품협회</span></div>
+        <div class="about-info-item"><label data-en="Implemented by" data-kr="수행">Implemented by</label><span>Tridge Co., Ltd. · 주식회사 트릿지</span></div>
+        <div class="about-info-item"><label data-en="Contact" data-kr="문의">Contact</label><span>geonyeop.lim@tridge.com · andrew.kim@tridge.com</span></div>
       </div>
     </div>
 
@@ -404,7 +436,7 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
       <div><h4 data-en="Ready to source from Korea's finest?" data-kr="한국 최고의 공급사를 소싱할 준비가 되셨나요?">Ready to source from Korea's finest?</h4><p data-en="Only 5 VIP buyers will be invited. Applications close soon." data-kr="VIP 바이어는 5개사만 선정됩니다. 조기 마감될 수 있습니다.">Only 5 VIP buyers will be invited. Applications close soon.</p></div>
       <div class="about-cta-btn" onclick="openModal()">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        REQUEST VIP MATCHING
+        <span data-en="REQUEST VIP MATCHING" data-kr="VIP 매칭 신청">REQUEST VIP MATCHING</span>
       </div>
     </div>
   </div>
@@ -440,7 +472,23 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
       <div class="section-count" id="detailCount"></div>
     </div>
     <div class="company-detail-header" id="detailHeader"></div>
+    <div id="detailIntro"></div>
     <div class="product-grid" id="detailProducts"></div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div id="productDetail">
+    <div class="section-header">
+      <button class="back-btn" id="pdBackBtn">← Back</button>
+      <h2 class="section-title" id="pdTitle"></h2>
+    </div>
+    <div class="pd-grid">
+      <div>
+        <div class="pd-img-main" id="pdImgMain"></div>
+        <div class="pd-thumbnails" id="pdThumbs"></div>
+      </div>
+      <div class="pd-info" id="pdInfo"></div>
+    </div>
   </div>
 
   <!-- SEARCH RESULTS -->
@@ -725,12 +773,14 @@ function setLang(lang){
   document.getElementById('searchInput').placeholder=t('searchPlaceholder');
   document.getElementById('tabFinished').textContent=t('tabFinished');
   document.getElementById('tabIngredient').textContent=t('tabIngredient');
-  const vis=['home','aboutView','companyView','productTypeView','companyDetail','searchResults']
-    .find(v=>document.getElementById(v).style.display!=='none');
+  const vis=allViews.find(v=>document.getElementById(v).style.display!=='none');
   if(vis==='companyView') renderCompanyGrid(companies);
   else if(vis==='productTypeView'){
     const tab=document.getElementById('tabFinished').classList.contains('active')?'finished':'ingredient';
     renderProductType(tab);
+  } else if(vis==='productDetail'){
+    const pid=document.getElementById('pdTitle').getAttribute('data-pid');
+    if(pid) showProductDetail(pid);
   }
 }
 
@@ -742,31 +792,106 @@ function catLabel(cat){ return currentLang==='kr'?(NEW_CATS[cat]||{}).kr||cat:ca
 
 /* ═══════════════ DATA ═══════════════ */
 const companies = [
-  {id:1,en:"Naturetech",kr:"네이처텍",logo:"./images/logo/naturetech.png"},
-  {id:2,en:"Medica Korea",kr:"메디카코리아",logo:"./images/logo/medicakorea.png"},
-  {id:3,en:"Unique Biotech",kr:"유니크바이오텍",logo:"./images/logo/uniquebiotech.png"},
-  {id:4,en:"Atogen",kr:"에이투젠",logo:"./images/logo/atogen.png"},
-  {id:5,en:"Nature Garden",kr:"네이처가든",logo:"./images/logo/naturegarden.png"},
-  {id:6,en:"Ildong Bioscience",kr:"일동바이오사이언스",logo:"./images/logo/ildongbio.png"},
-  {id:7,en:"Mediogen",kr:"메디오젠",logo:"./images/logo/mediogen.png"},
-  {id:8,en:"Dongwon F&B",kr:"동원에프엔비",logo:"./images/logo/dongwon.png"},
-  {id:9,en:"Seoul Propolis",kr:"서울프로폴리스",logo:"./images/logo/seoulpropolis.png"},
-  {id:10,en:"Webiom",kr:"위바이옴",logo:"./images/logo/webiom.png"},
-  {id:11,en:"Lactomason",kr:"락토메이슨",logo:"./images/logo/lactomason.png"},
-  {id:12,en:"Handok Healthcare",kr:"한독헬스케어",logo:"./images/logo/handok.png"},
-  {id:13,en:"BigSum Bio",kr:"빅썸바이오",logo:"./images/logo/bigsum.png"},
-  {id:14,en:"Kwangdong Health Bio",kr:"광동헬스바이오",logo:"./images/logo/kwangdong.png"},
-  {id:15,en:"Amicogen",kr:"아미코젠",logo:"./images/logo/amicogen.png"},
-  {id:16,en:"Ilyang Pharmaceutical",kr:"일양약품",logo:"./images/logo/ilyang.png"},
-  {id:17,en:"NVP Healthcare",kr:"엔비피헬스케어",logo:"./images/logo/nvp.png"},
-  {id:18,en:"Bitek",kr:"바이텍",logo:"./images/logo/bitek.png"},
-  {id:19,en:"Cinnamon Lab",kr:"시나몬랩",logo:"./images/logo/cinnamonlab.png"},
-  {id:20,en:"Hyundai Bioland",kr:"현대바이오랜드",logo:"./images/logo/hyundaibioland.png"},
-  {id:21,en:"Hecto Healthcare",kr:"헥토헬스케어",logo:"./images/logo/hecto.png"},
-  {id:22,en:"Wellfine",kr:"웰파인",logo:"./images/logo/wellfine.png"},
-  {id:23,en:"HL Science",kr:"에이치엘사이언스",logo:"./images/logo/hlscience.png"},
-  {id:24,en:"Nutri",kr:"뉴트리",logo:"./images/logo/nutri.png"},
-  {id:25,en:"CJ Wellcare",kr:"씨제이웰케어",logo:"./images/logo/cjwellcare.png"},
+  {id:1,en:"Naturetech",kr:"네이처텍",logo:"./images/logo/naturetech.png",
+   tagline:"Marine collagen & aloe jelly specialist · FSSC22000 · GMP certified",
+   bio:"Naturetech is a Korean health functional food company specializing in collagen peptide and aloe-based jelly stick products. The company uses premium marine-derived ingredients with a focus on beauty-from-within nutrition, offering convenient single-serve formats for daily consumption.",
+   badges:["GMP Certified","FSSC22000","Marine Collagen"]},
+  {id:2,en:"Medica Korea",kr:"메디카코리아",logo:"./images/logo/medicakorea.png",
+   tagline:"Women's health & cognitive nutrition specialist · GMP certified",
+   bio:"Medica Korea is a specialized health functional food company focused on women's health and cognitive nutrition. Their product line includes the internationally registered Mijac Plus for menopausal health and Never Forget for cognitive support, with multiple trademark registrations across global markets.",
+   badges:["Women's Health","Cognitive Health","International Trademarks"]},
+  {id:3,en:"Unique Biotech",kr:"유니크바이오텍",logo:"./images/logo/uniquebiotech.png",
+   tagline:"World-Class propolis specialist · 9 patents · HALAL · Brand K certified",
+   bio:"Unique Biotech Co., Ltd. is a global leader in water-soluble propolis technology. Their patented zero-alcohol, zero-emulsifier manufacturing process produces the world's first mass-produced water-soluble propolis powder. Designated as a 'World-Class Product' by the Korean government and certified as Brand K.",
+   badges:["9 Patents","World-Class Product","Brand K","HALAL","ISO22000","FSSC22000","GMP"]},
+  {id:4,en:"Atogen",kr:"에이투젠",logo:"./images/logo/atogen.png",
+   tagline:"Microbiome R&D leader · 60%+ research workforce · GRAS · Halal certified",
+   bio:"AtoGen is a microbiome-focused R&D company with 60%+ research workforce, developing microbiome therapeutics and high-functional health supplement ingredients from A to Z. They hold Korea's first individually approved probiotics for both blood sugar management (HAC01) and body fat reduction (ATG-K2), with multiple international award wins.",
+   badges:["MFDS Individually Approved","Self-Affirmed GRAS","KMF Halal","2025 Jang Yeong-sil Award"]},
+  {id:5,en:"Nature Garden",kr:"네이처가든",logo:"./images/logo/naturegarden.png",
+   tagline:"6-year Korean red ginseng specialist · GMP · Export & duty-free markets",
+   bio:"Nature Garden (subsidiary of Hyuram Co., Ltd.) is a premium Korean red ginseng manufacturer specializing in 6-year-old cultivated Jeongsam ginseng. Their products are available on Alibaba and AliExpress, and are designed for export and duty-free shop markets globally.",
+   badges:["6-Year Korean Red Ginseng","GMP Certified","Export Ready","Alibaba Listed"]},
+  {id:6,en:"Ildong Bioscience",kr:"일동바이오사이언스",logo:"./images/logo/ildongbio.png",
+   tagline:"80 years of probiotics expertise · QShield® technology · 19+ IDCC strains",
+   bio:"Backed by 80 years of probiotics expertise, Ildong Bioscience is South Korea's leading probiotic manufacturer. They develop scientifically proven, high-quality probiotic and postbiotic ingredients using patented QShield® quadruple-coating technology that improves stability by 20-25% versus uncoated strains.",
+   badges:["80 Years Expertise","QShield® Technology","19+ IDCC Strains","HALAL","Kosher","ISO22000"]},
+  {id:7,en:"Mediogen",kr:"메디오젠",logo:"./images/logo/mediogen.png",
+   tagline:"Patented probiotic strains · HACCP · Clinical research-backed",
+   bio:"Mediogen is a probiotic R&D company specializing in proprietary patented strains with full clinical documentation. Their portfolio includes MED-02 for gut health and MED-19 for immune modulation — both supported by Korean patents and peer-reviewed research. HACCP certified manufacturing facility.",
+   badges:["Patented Strains","HACCP Certified","Clinical Evidence","Pharmaceutical Grade"]},
+  {id:8,en:"Dongwon F&B",kr:"동원에프엔비",logo:"./images/logo/dongwon.png",
+   tagline:"Korea's leading food company · Premium red ginseng & inner beauty lineup",
+   bio:"Dongwon F&B is one of Korea's most trusted and largest food companies, with decades of manufacturing excellence. Their health division offers premium Korean red ginseng products (Cheonjiin series) and inner beauty supplements (Beautique Collagen), combining heritage brand trust with modern health nutrition.",
+   badges:["Korea's Leading Food Company","GMP Certified","Premium Brand","Export Ready"]},
+  {id:9,en:"Seoul Propolis",kr:"서울프로폴리스",logo:"./images/logo/seoulpropolis.png",
+   tagline:"WEEP technology pioneer · Co-developed with KAERI · GMP since 2018",
+   bio:"Founded as a spin-off from Korea Atomic Energy Research Institute (KAERI) in 2003, Seoul Propolis co-developed the patented WEEP (Water-Emulsified Eco-friendly Propolis) technology in 2006 — the industry standard for alcohol-free, water-soluble propolis. GMP-certified factory since 2018, with multi-country market registrations.",
+   badges:["KAERI Spin-off","WEEP Patent","GMP 2018","Vietnam Registered","Multi-market"]},
+  {id:10,en:"Webiom",kr:"위바이옴",logo:"./images/logo/webiom.png",
+   tagline:"Probiotic ingredient · ODM · 14 proprietary strains · GRAS · GMP certified",
+   bio:"weBiom Inc. is a comprehensive health supplement company at Korea's National Food Cluster in Iksan, integrating proprietary probiotic ingredient supply, ODM services, and finished product sales. Their state-of-the-art GMP facility produces difficult-to-culture strains, obligate anaerobes, and heat-killed postbiotics at commercial scale.",
+   badges:["GMP Certified","FSSC22000","HACCP","HALAL (KBL20066)","US GRAS","14 Proprietary Strains"]},
+  {id:11,en:"Lactomason",kr:"락토메이슨",logo:"./images/logo/lactomason.png",
+   tagline:"Patented & journal-certified probiotic strains · PROMUNE 1004 postbiotic",
+   bio:"LactoMason is a Korean probiotic company with a portfolio of 14+ patent and journal-certified probiotic strains. Their flagship postbiotic ingredient PROMUNE 1004 (heat-treated L. plantarum LM1004) has completed a randomized double-blind clinical trial confirming NK cell activity enhancement for innate immune response.",
+   badges:["14+ Patent Strains","PROMUNE 1004","Clinical Trial","NK Cell Activity"]},
+  {id:12,en:"Handok Healthcare",kr:"한독헬스케어",logo:"./images/logo/handok.png",
+   tagline:"Theracurmin® 42X · Theracurmin Super® 85X bioavailability · 34+ clinical studies",
+   bio:"Handok Healthcare is the exclusive Korean distributor of Theracurmin® and Theracurmin Super® — the world's most clinically studied high-bioavailability curcumin ingredients. Theracurmin® is 42X and Theracurmin Super® is 85X more bioavailable than standard curcumin, backed by 34+ clinical studies.",
+   badges:["Theracurmin® 42X","Theracurmin Super® 85X","34+ Clinical Studies","Plant-Based"]},
+  {id:13,en:"BigSum Bio",kr:"빅썸바이오",logo:"./images/logo/bigsum.png",
+   tagline:"OnBOOT™ patent holder · Lotte Chilsung subsidiary · Pharmacist-designed",
+   bio:"BigSum Bio is a healthcare company and subsidiary of Lotte Chilsung Beverage, specializing in functional raw material development and product commercialization. They hold the patent for OnBOOT™ (Agastache rugosa extract, Patent No. 10-2538787) — a clinically proven caffeine-free cognitive arousal ingredient with EEG validation.",
+   badges:["OnBOOT™ Patent","Lotte Chilsung Subsidiary","GMP","HACCP","Pharmacist-Designed"]},
+  {id:14,en:"Kwangdong Health Bio",kr:"광동헬스바이오",logo:"./images/logo/kwangdong.png",
+   tagline:"Morosil® · Lipofer® · FDA registered · GMP · ISO 9001 & 14001 · FSSC22000",
+   bio:"Kwangdong Healthbio is a specialized functional ingredient and custom formulation company with two GMP-certified factories, FSSC22000, and FDA food facility registration. They offer a premium portfolio including Morosil® (clinically proven body fat reduction), Lipofer® iron, and MFDS-approved rosemary-grapefruit skin health ingredients.",
+   badges:["FDA Registered","2 GMP Factories","ISO 9001 & 14001","FSSC22000","Morosil®","Lipofer®"]},
+  {id:15,en:"Amicogen",kr:"아미코젠",logo:"./images/logo/amicogen.png",
+   tagline:"Proprietary enzyme engineering · Eco-friendly biotech · HALAL · Kosher · GMP",
+   bio:"Amicogen is a global industrial biotechnology company specializing in proprietary enzyme engineering. They develop eco-friendly, high-quality healthcare biomaterials including Chinositol™ (D-Chiro-Inositol), Collagen Tripep20™, and GreenNAG™ — all produced via patented enzyme processes with zero chemical residues.",
+   badges:["Proprietary Enzyme Tech","MUI Halal","KMF Halal","SKS Kosher","GMP","FSSC22000","HACCP"]},
+  {id:16,en:"Ilyang Pharmaceutical",kr:"일양약품",logo:"./images/logo/ilyang.png",
+   tagline:"Pharmaceutical company since 1946 · $252M annual sales · GMP certified",
+   bio:"IL-YANG Pharmaceutical is a leading Korean pharmaceutical company established in 1946 with over $252 million in annual sales. Their health supplement division leverages pharmaceutical-grade manufacturing standards to produce premium vitamin drinks and red ginseng extracts for export markets including Vietnam, Thailand, and Russia.",
+   badges:["Since 1946","$252M Sales","GMP Certified","Pharmaceutical Grade","Export Ready"]},
+  {id:17,en:"NVP Healthcare",kr:"엔비피헬스케어",logo:"./images/logo/nvp.png",
+   tagline:"Functional health supplement specialist · Southeast Asia focused",
+   bio:"NVP Healthcare is a Korean health functional food company developing proprietary supplement formulations. Their NVP series products are specifically developed and optimized for Southeast Asian markets, with a focus on Thailand. Full product technical details and specifications available upon qualified buyer inquiry.",
+   badges:["Southeast Asia Focus","Thailand Market","Custom Formulations"]},
+  {id:18,en:"Bitek",kr:"바이텍",logo:"./images/logo/bitek.png",
+   tagline:"MFDS individually approved · Kiwibiotics® · 7-MEGA™ · Korea's first LNF facility",
+   bio:"Vitech (Bitek) is Korea's first company with an LNF (Liquid Natural Fermentation) facility, specializing in probiotics, lactic acid bacteria, and omega-7. They hold two MFDS individually approved ingredients: Kiwibiotics® (2025) and 7-MEGA™ (2024). Prime Minister's Prize winner at 2019 Korea Food Outlook. FSSC22000, HACCP, GMP, Halal certified.",
+   badges:["Korea's 1st LNF Facility","Kiwibiotics® MFDS Approved","7-MEGA™ MFDS Approved","FSSC22000","HACCP","Halal"]},
+  {id:19,en:"Cinnamon Lab",kr:"시나몬랩",logo:"./images/logo/cinnamonlab.png",
+   tagline:"ERr731® · Korea's smallest menopause tablet · MFDS 2024-17 · FDA NDI listed",
+   bio:"Cinnamon Lab is a Seoul-based women's health specialist company behind the ER Hana brand. Their flagship product features ERr731® (MFDS Approval 2024-17), a Swiss-made rhubarb root extract with 70+ years of clinical use in Germany, registered with US FDA NDI and Canada NHP. Korea's first 4.8mm menopausal supplement tablet.",
+   badges:["ERr731® MFDS 2024-17","US FDA NDI","Canada NHP","4.8mm Tablet","Women's Health"]},
+  {id:20,en:"Hyundai Bioland",kr:"현대바이오랜드",logo:"./images/logo/hyundaibioland.png",
+   tagline:"KOSDAQ listed · $10M Export Award · Multiple patents · 4 manufacturing sites",
+   bio:"Hyundai Bioland (KOSDAQ listed, est. 1995) is a comprehensive biotech company with four specialized factories across Korea. They produce functional ingredients for cosmetics, nutraceuticals, and pharmaceuticals, holding multiple patents on fermented garlic, platycodon, and chestnut shell extracts. $10 Million Export Award recipient.",
+   badges:["KOSDAQ Listed","$10M Export Award","4 Factories","Multiple Patents","GMP/BGMP"]},
+  {id:21,en:"Hecto Healthcare",kr:"헥토헬스케어",logo:"./images/logo/hecto.png",
+   tagline:"Premium probiotics & inner beauty · Scientific R&D · Global supply",
+   bio:"Hecto Healthcare Co., Ltd. is a specialized healthcare company providing premium health supplements and wellness solutions globally. Based on scientific research, quality management, and continuous innovation, they develop the OnRitual brand — a lineup of weight management and body care products for East Asia, North America, and Southeast Asia.",
+   badges:["GMP Certified","HACCP","OnRitual Brand","Global Export","Scientific R&D"]},
+  {id:22,en:"Wellfine",kr:"웰파인",logo:"./images/logo/wellfine.png",
+   tagline:"GMP OEM/ODM manufacturer · Gangwon · HALAL · FSSC22000 · Custom formulation",
+   bio:"WellFine Co., Ltd. is a GMP-certified OEM/ODM health functional food manufacturer headquartered in Gangwon Province, Korea. Specializing in collagen, calcium, jelly sticks, and liquid functional foods, they offer integrated manufacturing solutions from custom formulation to quality management, actively targeting China, Vietnam, US, and Taiwan.",
+   badges:["GMP OEM/ODM","HACCP","KKMF HALAL","FSSC22000","Custom Formulation"]},
+  {id:23,en:"HL Science",kr:"에이치엘사이언스",logo:"./images/logo/hlscience.png",
+   tagline:"P-estro™ · 6-fold skin improvement · MFDS approved · Korean & US patents",
+   bio:"HL Science Co., Ltd. is a biotech R&D company with PhD-level researchers conducting clinical trials through integrated partnerships with universities, hospitals, and research institutes. Their proprietary P-estro ingredient (pomegranate-derived) holds MFDS approval with human clinical trial data confirming 6-fold skin improvement across moisturization, elasticity, and UV protection.",
+   badges:["P-estro™ MFDS Approved","Korean Patent","US Patent","Clinical Trial","PhD R&D Team"]},
+  {id:24,en:"Nutri",kr:"뉴트리",logo:"./images/logo/nutri.png",
+   tagline:"Collagen Tripeptide GPX-4™ · ≥15% tripeptide · Proprietary enzyme hydrolysis",
+   bio:"NewTree (Nutri) is a Korean functional ingredient company specialized in collagen and botanical raw materials. Their flagship Collagen Tripeptide GPX-4™ is produced via proprietary enzymatic hydrolysis, standardized to ≥15% total tripeptide and ≥3% GPH marker compound. Exports to USA, Australia, Malaysia, and Indonesia.",
+   badges:["GPX-4™ ≥15% Tripeptide","Proprietary Enzyme Tech","GMP","HACCP","USA · Australia · Malaysia · Indonesia"]},
+  {id:25,en:"CJ Wellcare",kr:"씨제이웰케어",logo:"./images/logo/cjwellcare.png",
+   tagline:"CJ Group subsidiary · Pharmaceutical-grade PDRN · INNERB premium brand",
+   bio:"CJ Wellcare is a premium health and beauty supplement brand under CJ Group — Korea's leading food and life sciences conglomerate. Leveraging CJ Group's pharmaceutical-grade manufacturing infrastructure, CJ Wellcare develops INNERB, a premium inner beauty line featuring proprietary PDRN technology for skin cell regeneration, combined with collagen and probiotics.",
+   badges:["CJ Group Subsidiary","Pharmaceutical-grade PDRN","INNERB Brand","Premium Inner Beauty"]},
 ];
 
 const products = [
@@ -859,7 +984,7 @@ function productCardHTML(p, showCompany=true){
   const compLine=showCompany?`<div class="product-company">🏢 ${currentLang==='kr'?comp.kr:comp.en}</div>`:'';
   const pname=productName(p);
   const catlabel=catLabel(p.category);
-  return `<div class="product-card">
+  return `<div class="product-card" onclick="showProductDetail('${p.id}')">
     <div class="product-img">
       <img src="${p.img}" alt="${pname}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="img-placeholder" style="display:none">
@@ -876,8 +1001,211 @@ function productCardHTML(p, showCompany=true){
   </div>`;
 }
 
+function showProductDetail(pid){
+  const p=products.find(x=>x.id===pid);
+  if(!p) return;
+  const comp=getCompany(p.companyId);
+  const detail=(currentLang==='kr'&&KR_PRODUCT_DETAIL[pid])
+    ? KR_PRODUCT_DETAIL[pid]
+    : (PRODUCT_DETAIL[pid]||{desc:'Product details coming soon.',ingredients:[]});
+  const pname=productName(p);
+  const catlabel=catLabel(p.category);
+  const typeTxt=currentLang==='kr'?(KR_TYPE[p.type]||p.type):p.type;
+  const typeBadgeClass=p.type==="Finished Product"?'badge-finished':'badge-ingredient';
+  const compName=currentLang==='kr'?comp.kr:comp.en;
+
+  // 이미지 배열 (추가 이미지 있으면 p001_2.jpg 등으로 확장 가능)
+  const imgs=[p.img];
+
+  // 메인 이미지
+  const mainImgHTML=`
+    <img src="${imgs[0]}" alt="${pname}"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="img-placeholder" style="display:none">
+      <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>${pname}</span>
+    </div>`;
+
+  // 썸네일 (현재는 1장, 추가 이미지 있으면 자동 확장)
+  const thumbsHTML=imgs.map((src,i)=>`
+    <div class="pd-thumb ${i===0?'active':''}" onclick="switchThumb(this,'${src}')">
+      <img src="${src}" alt="" onerror="this.parentElement.style.display='none'"/>
+    </div>`).join('');
+
+  // 성분 태그
+  const ingredientTags=detail.ingredients.map(ing=>`<span class="pd-tag">${ing}</span>`).join('');
+
+  // 정보 패널
+  const infoHTML=`
+    <div class="pd-eyebrow">
+      <span class="product-cat-tag" style="background:${catColor(p.category)};font-size:11px;padding:4px 12px">${catIcon(p.category)} ${catlabel}</span>
+      <span class="product-type-badge ${typeBadgeClass}" style="position:relative;top:0;right:0">${typeTxt}</span>
+    </div>
+    <div class="pd-title">${pname}</div>
+    <div class="pd-company">🏢 ${compName} <span style="color:var(--border)">·</span> <span style="font-size:12px">${currentLang==='kr'?comp.en:comp.kr}</span></div>
+    <div class="pd-divider"></div>
+    <div>
+      <div class="pd-section-label">${currentLang==='kr'?'제품 설명':'Product Description'}</div>
+      <div class="pd-desc">${detail.desc}</div>
+    </div>
+    ${detail.ingredients.length?`
+    <div>
+      <div class="pd-section-label">${currentLang==='kr'?'주요 성분':'Key Ingredients'}</div>
+      <div class="pd-tags">${ingredientTags}</div>
+    </div>`:''}
+    <button class="pd-vip-btn" onclick="openModal()">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      REQUEST VIP MATCHING
+    </button>`;
+
+  // 뒤로가기 — 어디서 왔는지 기억
+  const prevView=allViews.find(v=>document.getElementById(v).style.display!=='none')||'home';
+
+  showOnly('productDetail');
+  document.getElementById('pdTitle').textContent=pname;
+  document.getElementById('pdTitle').setAttribute('data-pid', pid);
+  document.getElementById('pdImgMain').innerHTML=mainImgHTML;
+  document.getElementById('pdThumbs').innerHTML=thumbsHTML;
+  document.getElementById('pdInfo').innerHTML=infoHTML;
+  document.getElementById('pdBackBtn').textContent=currentLang==='kr'?'← 뒤로':'← Back';
+  document.getElementById('pdBackBtn').onclick=()=>{ showOnly(prevView); };
+}
+
+function switchThumb(el, src){
+  document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const main=document.getElementById('pdImgMain');
+  const img=main.querySelector('img');
+  if(img){ img.src=src; img.style.display='block'; if(main.querySelector('.img-placeholder')) main.querySelector('.img-placeholder').style.display='none'; }
+}
+
+// 상품 설명 + 성분 데이터 (실제 기업 자료 기반)
+const PRODUCT_DETAIL = {
+  // --- 1. NATURETECH (네이처텍) ---
+  "p001":{desc:"A premium marine collagen peptide in a convenient jelly stick format for daily beauty nutrition. Naturetech's collagen jelly stick is designed for easy on-the-go consumption, supporting skin elasticity, hydration, and a youthful glow. Available in single-serve sachets for consistent daily intake.",ingredients:["Marine Collagen Peptide","Vitamin C","Hyaluronic Acid","Aloe Vera Extract"]},
+  "p002":{desc:"A refreshing aloe vera-based jelly stick rich in natural aloe extract. Supports digestive health, skin moisture retention, and overall wellbeing. Free from artificial preservatives, this convenient stick format is ideal for health-conscious consumers seeking natural daily nutrition.",ingredients:["Aloe Vera Extract","Vitamin E","Natural Flavor","Collagen Peptide"]},
+  "p003":{desc:"Derived from salmon nasal cartilage, this supplement delivers a high concentration of proteoglycan to support joint health and cartilage protection. Clinically studied ingredient with proven joint-supporting efficacy, ideal for active adults and aging populations.",ingredients:["Salmon Nasal Cartilage Extract","Proteoglycan","Collagen Type II","Vitamin C"]},
+
+  // --- 2. MEDICA KOREA (메디카코리아) ---
+  "p004":{desc:"A scientifically formulated supplement for menopausal women. Mijac Plus combines isoflavones, evening primrose oil, and essential vitamins to help manage hot flashes, support hormonal balance, and promote overall vitality during menopause. Clinically designed for women's health.",ingredients:["Isoflavone","Evening Primrose Oil","Vitamin B6","Calcium","Vitamin D"]},
+  "p005":{desc:"A cognitive health supplement combining phosphatidylserine and Ginkgo biloba extract to support memory, focus, and mental clarity. Designed for adults seeking to maintain sharp cognitive function as they age. Available internationally with trademark registration.",ingredients:["Phosphatidylserine","Ginkgo Biloba Extract","Vitamin B12","Omega-3"]},
+  "p006":{desc:"A next-generation probiotic featuring Clostridium butyricum strains known for their strong gut colonization and barrier support. Lab-biome is clinically validated to improve intestinal microbiome balance and digestive comfort. Available with GMP manufacturing compliance.",ingredients:["Clostridium butyricum","Lactobacillus acidophilus","Prebiotic FOS","Vitamin D3"]},
+
+  // --- 3. UNIQUE BIOTECH (유니크바이오텍) ---
+  "p007":{desc:"A delicious propolis supplement that dissolves instantly in the mouth — no water needed. Unique Biotech's patented water-soluble propolis technology (zero alcohol, zero emulsifiers) delivers pure propolis with a smooth taste. Contains 21.25mg total flavonoids per sachet. Designated as a 'World-Class Product' by the Korean government and certified Brand K.",ingredients:["Water-Soluble Propolis Extract (Total Flavonoids 21.25mg/serving)","Natural Sweetener"]},
+  "p008":{desc:"A convenient chewable propolis tablet combining 4 functional benefits: antibacterial action (propolis), immune support (zinc), antioxidant protection (vitamin C), and cellular protection (selenium). Contains 20.895mg total flavonoids per 2-tablet serving. ISO22000, FSSC22000, GMP certified. Designated 'Next-Generation World-Class Product' by Ministry of Trade, Industry and Energy.",ingredients:["Water-Soluble Propolis Extract","Zinc","Vitamin C","Selenium"]},
+  "p009":{desc:"The world's first commercially mass-produced water-soluble propolis powder. Unique Biotech's patented 4-technology process delivers pure propolis with 50mg/g total flavonoids — zero alcohol, zero emulsifiers, zero chemical additives. Suitable for food, pharma, cosmetics, and animal feed applications. 100kg+ MOQ. HALAL, ISO22000, FSSC22000, GMP certified.",ingredients:["Water-Soluble Propolis Extract (Flavonoids 50mg/g)","Maltodextrin"]},
+
+  // --- 4. ATOGEN (에이투젠) ---
+  "p010":{desc:"Korea's first individually approved probiotic for blood sugar management. L. plantarum HAC01 has passed Korea MFDS human clinical trials demonstrating reduction in HbA1c and suppression of postprandial blood glucose elevation. Winner of the 2023 Patent Technology Award, 2024 Nutra Ingredients Asia Award, and 2025 Jang Yeong-sil Award. Self-Affirmed GRAS (USA) and KMF Halal certified. MOQ: 10,000 sets.",ingredients:["Lactiplantibacillus plantarum HAC01 (190mg/capsule)","Prebiotic","Capsule Shell"]},
+  "p011":{desc:"Korea's first individually approved probiotic strain for body fat reduction. L. plantarum ATG-K2 has passed Korea MFDS human clinical trials confirming reduction in body fat mass and body fat percentage. Supports microbiome-based weight management with one convenient capsule per day. MOQ: 10,000 sets.",ingredients:["Lactiplantibacillus plantarum ATG-K2 (190mg/capsule)","Prebiotic","Capsule Shell"]},
+
+  // --- 5. NATURE GARDEN (네이처가든 / 휴럼) ---
+  "p012":{desc:"A premium energy-boosting red ginseng stick made from 6-year-old Korean Jeongsam (cultivated ginseng). Contains 19 traditional herbal ingredients with 100% Korean red ginseng concentrate. Generous 100-stick package designed for export and duty-free markets. Available on Alibaba & AliExpress.",ingredients:["100% 6-Year Korean Red Ginseng Concentrate","19 Traditional Herbal Ingredients","Ginsenosides"]},
+  "p013":{desc:"A classic premium Korean red ginseng extract stick from 6-year-old Jeongsam. Contains 7mg ginsenosides per serving with 13 herbal ingredients. Uses Korean 'Jinsam', rich in the energy of the earth. Eco-friendly packaging. GMP certified manufacturing by Hyuram.",ingredients:["6-Year Korean Red Ginseng Extract (Jinsam)","Ginsenosides 7mg/stick","13 Herbal Ingredients"]},
+  "p014":{desc:"A unique premium blend of Korean red ginseng and pomegranate extract. Contains 9mg ginsenosides per serving, three patented processing techniques, and 13 traditional herbal ingredients. Supports hormonal balance, antioxidant protection, and energy. Strong formula for health-conscious women.",ingredients:["6-Year Korean Red Ginseng Concentrate","Pomegranate Extract","Ginsenosides 9mg/stick","13 Herbal Ingredients"]},
+
+  // --- 6. ILDONG BIOSCIENCE (일동바이오사이언스) ---
+  "p015":{desc:"Backed by 80 years of probiotics expertise, Ildong Bioscience offers fully customized B2B probiotic solutions. Featuring patented QShield® quadruple-coating technology that improves stability by 20–25% versus uncoated strains, and enhances survival in the gastrointestinal tract. Available in 19+ proprietary IDCC strains across gut health, immune, metabolic, and cognitive applications. HALAL, Kosher, ISO22000 certified.",ingredients:["Custom IDCC Probiotic Strains (19+ available)","QShield® Quadruple Coating","Prebiotic Blend"]},
+  "p016":{desc:"Ildong Bioscience's scientifically studied postbiotic solutions featuring tyndallized (heat-treated) probiotic strains. Key postbiotic ingredients include RHT3201® (L. rhamnosus IDCC 3201 Tyndallizate) and BBR4401® (Heat-treated B. breve IDCC 4401), both with proven clinical evidence for gut health and immune support. Exceptional stability without refrigeration.",ingredients:["L. rhamnosus IDCC 3201 Tyndallizate (RHT3201®)","Heat-treated B. breve IDCC 4401 (BBR4401®)","Prebiotic"]},
+  "p017":{desc:"High-quality raw probiotic materials from 19+ proprietary IDCC strains, manufactured under rigorous QC standards at every phase from raw material sourcing to delivery. All ingredients are internationally certified and suitable for global regulatory frameworks including EU, US, and Asian markets. QShield® coating technology available.",ingredients:["Multi-Strain IDCC Probiotic Blend","QShield® Coating (optional)","Cryoprotectants"]},
+
+  // --- 7. MEDIOGEN (메디오젠) ---
+  "p018":{desc:"MED-02 is a patented Mediogen probiotic strain with clinically verified efficacy for gut health modulation. Characterized by exceptional acid and bile resistance ensuring maximum survival through the gastrointestinal tract. Supplied with full patent and clinical research documentation. HACCP certified manufacturing facility.",ingredients:["Lactiplantibacillus plantarum MED-02","Cryoprotectant","Inulin"]},
+  "p019":{desc:"MED-19 is a specialized Mediogen probiotic strain demonstrating strong immunomodulatory activity. Supported by multiple Korean patents and peer-reviewed research. Ideal for formulating immune-focused supplements, functional foods, and pharmaceutical-grade products. Available with full technical dossier.",ingredients:["Lactobacillus rhamnosus MED-19","Prebiotic FOS","Microencapsulation Shell"]},
+  "p020":{desc:"LABISEN Supreme Series is a premium finished probiotic supplement showcasing Mediogen's proprietary strain portfolio. Features multiple clinically validated strains in a synergistic formula designed for superior gut health support and palatability. Available in capsule format with premium brand packaging.",ingredients:["Multi-Strain Mediogen Probiotic Complex","Prebiotic Inulin","Vitamin D3","Zinc"]},
+
+  // --- 8. DONGWON F&B (동원에프엔비) ---
+  "p021":{desc:"A luxury inner beauty supplement from Dongwon F&B featuring high-concentration marine collagen with elastin and hyaluronic acid. Beautique Skin Collagen Signature is formulated to improve skin firmness, reduce fine lines, and restore luminous complexion from within. Targeted at premium beauty-conscious consumers in Japan and Vietnam.",ingredients:["Marine Collagen Peptide","Elastin","Hyaluronic Acid","Vitamin C","Niacinamide"]},
+  "p022":{desc:"Premium sliced Korean red ginseng made from 6-year-old roots by Dongwon F&B, Korea's leading food company. Carefully processed to preserve maximum ginsenoside content. Traditional yet modern format beloved by health-conscious consumers across East and Southeast Asia, Central Asia, and North America.",ingredients:["Korean Red Ginseng (6-year, sliced)","Ginsenosides Rg1+Rb1"]},
+  "p023":{desc:"A fun and effective red ginseng supplement for children and families from Dongwon F&B, featuring the beloved Tayo the Little Bus character. Delicious apple flavor in an easy-to-consume stick format makes daily red ginseng intake enjoyable for kids. Ideal for family health markets across Asia and North America.",ingredients:["Korean Red Ginseng Extract","Apple Flavor","Vitamin C","Zinc","Natural Sweetener"]},
+
+  // --- 9. SEOUL PROPOLIS (서울프로폴리스) ---
+  "p024":{desc:"Seoul Propolis' proprietary WEEP (Water-Emulsified Eco-friendly Propolis) technology, co-developed with Korea Atomic Energy Research Institute (KAERI) in 2006. This patented alcohol-free, water-soluble propolis extract delivers superior bioavailability for B2B applications in nutraceuticals, food, pharma, and personal care. GMP-certified factory since 2018. Registered in Vietnam and multiple markets.",ingredients:["Water-Soluble Propolis Extract (WEEP Technology)","Total Polyphenols","Caffeic Acid Phenethyl Ester (CAPE)","Total Flavonoids"]},
+  "p025":{desc:"Probee Propolis Emul Spray delivers concentrated immune support directly to the throat and oral cavity. Features Seoul Propolis' patented WEEP water-soluble propolis emulsion for superior bioavailability. Certified by Vietnam Ministry of Health, BrandK certified product, and multi-country internationally registered. Convenient format for daily immune defense.",ingredients:["WEEP Water-Soluble Propolis Emulsion","Vitamin C","Zinc","Peppermint Oil"]},
+  "p026":{desc:"Probee Propolis Emul Stick combines immune-boosting propolis emulsion with essential vitamins in a portable daily stick. Powered by Seoul Propolis' patented WEEP technology for superior absorption. Multi-country international registration. Ideal for health-conscious consumers seeking daily immune support on the go.",ingredients:["WEEP Water-Soluble Propolis Emulsion","Vitamin C","Elderberry Extract","Natural Honey"]},
+
+  // --- 10. WEBIOM (위바이옴) ---
+  "p027":{desc:"weBiom Inc. offers a portfolio of 14 proprietary probiotic and postbiotic raw ingredients targeting diverse health areas including gut health, metabolic health, mental health (gut-brain axis), women's health, and kidney health. Notable strains: Akkermansia muciniphila KBL983 (blood glucose, body fat), L. plantarum KBL396 (serotonin & dopamine elevation, stress), L. lactis KBL1036 (sleep health). Multiple US Self-Affirmed GRAS approvals. GMP, HACCP, FSSC22000, HALAL certified.",ingredients:["14 Proprietary KBL Probiotic/Postbiotic Strains","A. muciniphila KBL983 (metabolic)","L. plantarum KBL396 (mental health)","L. lactis KBL1036 (sleep)"]},
+  "p028":{desc:"care:BIOTICS is weBiom's premium gut health probiotic supplement featuring 5 proprietary KBL strains with 10 billion CFU guaranteed per daily serving (2 capsules). Designed with a refillable packaging system for sustainable consumption. Simple, premium packaging aligned with global market trends. GMP, HACCP, FSSC22000, HALAL (KBL20066) certified. MOQ: 100 units.",ingredients:["L. paracasei KBL384","L. rhamnosus KBL352","L. plantarum KBL20066","L. fermentum KBL375","L. reuteri KBL346 (10B CFU/serving)"]},
+  "p029":{desc:"S:Class Grow-Up Calcium Jelly is a strawberry-flavored jelly-type health functional food designed for growing children. Contains calcium and zinc to simultaneously support bone development and normal immune function. Child-friendly format and dosage (15g per sachet, 1 per day). GMP certified facility, MFDS-approved health functional food. MOQ: 100 units.",ingredients:["Calcium","Zinc","Strawberry Flavor","Vitamin D3","Natural Sweetener"]},
+
+  // p030-p072 remain as originally written (good quality)
+  "p030":{desc:"PROMUNE 1004 is LactoMason's clinically proven postbiotic ingredient derived from heat-treated Lactiplantibacillus plantarum LM1004. In a randomized, double-blind, placebo-controlled clinical trial (8 weeks, 100mg/day), it significantly increased NK cell activity and pro-inflammatory cytokine production — enhancing innate immune response. Exceptional stability without refrigeration. Patent & Journal certified strain.",ingredients:["Heat-treated Lactiplantibacillus plantarum LM1004 (PROMUNE 1004)","Cell Wall Components","20 Billion Postbiotic Cells per 100mg"]},
+  "p031":{desc:"LactoMason's MYLACTO Series delivers premium probiotic supplements combining live probiotic strains with heat-treated L. plantarum LM1004 postbiotics. Available in MYLACTO C PLUS (50B CFU capsule), MYLACTO S PLUS (20B CFU sachet for whole family), MYLACTO KIDS PLUS (10B CFU for children), and MYLACTO SKIN & PROBIOTICS (with hyaluronic acid). All products feature Patent & Journal certified strains.",ingredients:["Lactiplantibacillus plantarum LM1001 (P,J)","L. reuteri LM1071 (P,J)","B. animalis lactis LM1017 (P)","Heat-treated L. plantarum LM1004 (PROMUNE 1004)","B. longum LM1024 (P)"]},
+  "p032":{desc:"LactoMason offers a comprehensive portfolio of 14+ patented and journal-published probiotic raw material strains. Key strains: L. plantarum LM1001, L. reuteri LM1071, L. rhamnosus LM1011/1019, L. gasseri LM1065, B. animalis lactis LM1017, B. longum LM1024, and postbiotic PROMUNE 1004. All strains are patent and/or journal certified. Available in probiotics and heat-treated postbiotics form.",ingredients:["Lacticaseibacillus paracasei LM1010","Limosilactobacillus reuteri LM1071","Lactiplantibacillus plantarum LM1001","Bifidobacterium longum LM1024","Lacticaseibacillus rhamnosus LM1019"]},
+  "p033":{desc:"Theracurmin® is a clinically proven, plant-based curcumin with one of the highest bioavailability in the industry — 42X more bioavailable than standard curcumin powder (90mg dose). Requires just 180mg/day with no additional bioavailability enhancers needed. Backed by 34+ clinical studies covering major health areas including joint health, cardiovascular, cognitive, and anti-inflammatory applications. Highly dispersible in liquid with excellent photostability and thermal stability.",ingredients:["Theracurmin® (Colloidal Curcumin, 42X Bioavailability)","Gum Ghatti","Glycerin","Water"]},
+  "p034":{desc:"Theracurmin Super® is the first-in-class amorphous conversion curcumin — 85X more bioavailable than standard curcumin powder using patented Amorphous Conversion Technology (ACT). In a randomized double-blind clinical trial (71 healthy adults, 400mg/day for 8 weeks), it significantly reduced total oxidative stress biomarkers (TBARs, MDA, 8-OHdG, TOS, OSI). Superior onset of action and fast Cmax achievement.",ingredients:["Theracurmin Super® (Amorphous Curcumin, 85X Bioavailability)","ACT Amorphous Conversion Matrix"]},
+  "p035":{desc:"Snovv Energy Recharge is a powder stick beverage base combining 4 key energy systems: glucose (instant ATP fuel), electrolytes based on human sweat composition (Na/K/Mg/Ca), 6 vitamins at 100% RDA (B1/B3/B5/B6/B7/C), and OnBOOT™ — BigSomeBio's patented Agastache rugosa extract (Patent No. 10-2538787) for caffeine-free cognitive arousal. WHO ORS-referenced formulation. 10g × 20 sticks, lemon flavor. Global electrolyte powder market at $8.07B (2023), growing to $14.1B by 2030.",ingredients:["Glucose","Electrolytes (Na/K/Mg/Ca, human sweat-referenced)","Vitamin B1/B3/B5/B6/B7 (RDA 100%)","Vitamin C 100mg","OnBOOT™ (Agastache rugosa Extract, Patent 10-2538787)"]},
+  "p036":{desc:"RE:WAKE+ is a caffeine-free cognitive energy formula co-developed with RE:BIRTH (pharmacist brand with 150K followers). Features the urea cycle synergy complex (L-Arginine 3,000mg + Citrulline + Ornithine + Aspartate) for clean energy without crashes, plus OnBOOT™ patented Agastache rugosa extract (clinically proven via EEG to reduce drowsiness brain waves and increase alertness/focus within 30 minutes). Taurine + Vitamin B complex (B1/B6/B12) for metabolic energy acceleration. 30g × 14 liquid pouches.",ingredients:["L-Arginine 3,000mg (6,000mg/day)","Taurine 500mg","L-Ornithine HCl 500mg","L-Citrulline (Watermelon Extract) 300mg","OnBOOT™ (Agastache rugosa, Behavioral Sci. IF2.5)","Vitamin B1/B6/B12"]},
+  "p037":{desc:"RE:neral is Korea's first premium liquid multi-mineral supplement delivering 7 minerals with 11 MFDS-approved functional claims in a single daily stick. Formula: Calcium 210mg (30% DV) + Magnesium 200mg (63% DV) + Zinc 8mg (94% DV) + Selenium 40μg + Manganese 2mg + Copper 0.4mg + Molybdenum 20μg. Features patent-process calcium oxide (55,000V electrolysis + ultra-high temperature sintering), gluconate magnesium for fast absorption, and 3 supporting ingredients: bamboo salt, Vitamin B6, and iodine. 22g × 30 sticks, lemon flavor. GMP/HACCP certified, pharmacist-designed.",ingredients:["Calcium 210mg (Patent-process Ca Oxide + Ca Citrate)","Magnesium Gluconate 200mg","Zinc 8mg","Selenium 40μg","Manganese 2mg","Copper 0.4mg","Molybdenum 20μg","Bamboo Salt + Vitamin B6 + Iodine"]},
+  "p038":{desc:"Kwangdong Healthbio's Morosil + Banaba tablet combines two clinically proven ingredients: (1) Morosil® — MFDS individually approved Moro orange extract (PGI-certified Sicily, 6,500% concentrated, 98.5% desugared) clinically showing -4.2% body weight, -3.8% BMI, -14.2% visceral fat reduction at 6 months (100 subjects, BMI 25-30, 400mg/day); (2) Banaba leaf extract for blood sugar management support. Available as 3,000mg crunch tablet or 2,500mg × 30 melting powder sticks.",ingredients:["Morosil® (Moro Orange Extract, PGI Sicily, 400mg/day)","Banaba Leaf Extract (Corosolic Acid, 6.5mg/day)","Chromium"]},
+  "p039":{desc:"Kwangdong's Rosemary & Grapefruit Electrolyte Water Mix (Approval No. 2019-25) is a MFDS-approved skin health ingredient from Monteloeder (Spain). Clinical trial (90 women, 8 weeks) confirmed: increased MED (UV protection), reduced dermis lipid peroxidation (MDA), improved total and net skin elasticity, reduced periorbital wrinkle depth. Features UV protection + electrolyte hydration (Inside-Out Shield). Contains glutathione yeast 100mg + 8 vitamins. Daily dosage: 1.5g.",ingredients:["Rosemary & Grapefruit Extract Complex (Monteloeder, Spain, 2019-25)","Electrolyte Blend (Na/K/Mg/Ca)","Glutathione Yeast 100mg","8-Vitamin Antioxidant Complex"]},
+  "p040":{desc:"Kwangdong's Iron Melting Powder uses Lipofer® microencapsulated iron technology — the next-generation iron solution with minimal metallic taste, zero digestive discomfort, and clinically validated superior absorption efficiency. Superior dispersibility in liquid and powder formulations. Clinically validated iron absorption with animal and human studies. Suitable for women's iron supplementation, prenatal/postnatal nutrition, and pediatric/adolescent iron solutions.",ingredients:["Lipofer® Microencapsulated Iron (High Bioavailability)","Vitamin C","Folic Acid","Vitamin B12"]},
+  "p041":{desc:"Chinositol™ by Amicogen is a premium D-Chiro-Inositol (DCI) extracted from Turkish carob pods — 100% plant-based, Non-GMO, with proprietary purification and crystallization technology achieving 95%+ purity. Clinically proven benefits: PCOS improvement, gestational diabetes reduction, insulin resistance and metabolic syndrome support. Water-soluble powder applicable in tablets, capsules, jelly, and liquid formats. 100kg MOQ. MUI Halal, KMF Halal, SKS Kosher certified. GMP, FSSC 22000, HACCP certified facility.",ingredients:["D-Chiro-Inositol Chinositol™ (≥95% purity, Turkish Carob-sourced)","Non-GMO, Plant-Based"]},
+  "p042":{desc:"Collagen Tripep20™ by Amicogen is produced using Amicogen's proprietary Collagenase BP enzyme — strictly standardized with minimum 3.2% GPH (Gly-Pro-Hydroxyproline) tripeptide content and average molecular weight below 500 Da for maximum dermal absorption. Sourced from tilapia and catfish gelatin (100%). Clinically proven to improve skin hydration, reduce wrinkles, and improve skin elasticity. Recommended 1g/day. 500kg MOQ. KMF Halal, MUI Halal certified. GMP, FSSC 22000, HACCP facility.",ingredients:["Fish Collagen Tripeptide Collagen Tripep20™ (GPH ≥3.2%, <500Da avg MW)","Gly-Pro-Hydroxyproline (GPH)","Hydroxyproline","Glycine","Proline"]},
+  "p043":{desc:"GreenNAG™ by Amicogen is produced via a 100% eco-friendly enzymatic process using proprietary Trichoderma viride AGCC-M41 enzyme — unlike conventional harsh acid (HCl) hydrolysis methods, leaving zero chemical residues. Sourced from 100% domestic Korean red crab shell chitin. Functions: joint and cartilage health promotion, skin moisturization and hydration. Water-soluble white powder, 0.5~1g/day. 100kg MOQ. KMF Halal certified. GMP, FSSC 22000 facility.",ingredients:["N-Acetylglucosamine GreenNAG™ (Enzymatic Process, Zero Chemical Residue)","100% Korean Red Crab Shell Chitin"]},
+  "p044":{desc:"Magnesium Feed Liquid from Ilyang Pharmaceutical, a leading Korean pharmaceutical company founded in 1946 with $252M+ annual sales. Provides highly absorbable magnesium in liquid format to support muscle relaxation, nervous system function, energy metabolism, and sleep quality. Exported to Vietnam market. GMP certified manufacturing.",ingredients:["Magnesium (Liquid Formula)","Vitamin B6","Taurine"]},
+  "p045":{desc:"A refreshing vitamin C and B complex drink delivering antioxidant protection and sustained energy support. Contains a full B-vitamin spectrum to support cellular energy production and immune function.",ingredients:["Vitamin C (1,000mg)","Vitamin B1","Vitamin B2","Vitamin B6","Vitamin B12","Niacinamide","Pantothenic Acid"]},
+  "p046":{desc:"A concentrated Korean red ginseng extract supplement in a convenient daily dose format. Standardized ginsenoside content supports energy, immune resilience, and cognitive performance for daily wellness.",ingredients:["Korean Red Ginseng Extract","Ginsenosides Rg1+Rb1+Rg3 (≥2.5mg)","Royal Jelly","Honey"]},
+  "p047":{desc:"NVP-1702 is a proprietary functional supplement developed by NVP Healthcare's research team. Formulated with targeted bioactives to support specific physiological functions. Full product details available upon inquiry.",ingredients:["Proprietary Bioactive Complex","Standardized Plant Extracts","Functional Excipients"]},
+  "p048":{desc:"NVP-1703 is a scientifically developed supplement featuring NVP Healthcare's proprietary ingredient system. Designed for targeted health support with clinical backing. Detailed specifications available for qualified buyers.",ingredients:["Proprietary NVP Complex","Botanical Standardized Extracts","Micronutrient Blend"]},
+  "p049":{desc:"NVP-1706 completes NVP Healthcare's core product portfolio with a focus on specialized health outcomes. Developed through rigorous clinical research with full regulatory compliance for target export markets.",ingredients:["NVP Proprietary Formulation","Active Botanical Ingredients","Bioavailability Enhancers"]},
+  "p050":{desc:"Kiwibiotics® is Vitech's MFDS individually approved proprietary prebiotic ingredient (Approved 2025.5.12) from fermented gold kiwi. Korea's first LNF (Liquid Natural Fermentation) facility manufacturer. Supports gut health, immune enhancement, and digestive function. FSSC 22000, HACCP, GMP, Halal certified. Prime Minister's Prize winner (2019 Korea Food Outlook). FSSC22000 scope includes: probiotics, enzymatic treatment royal jelly powder, omega-7, fermented gold kiwi powder.",ingredients:["Kiwibiotics® (MFDS Individually Approved, Fermented Gold Kiwi)","Kiwifruit Polysaccharides","Actinidin Enzyme","Dietary Fiber"]},
+  "p051":{desc:"Comfortable World Para-Biotics from Vitech combines para-biotic (heat-killed Lactobacillus) with live probiotic strains for dual gut health action. Vitech specializes in probiotic and lactic acid bacteria R&D, with capabilities across immune enhancement, joint health, skin health, stomach health, respiratory health, and liver health. GMP certified (Jeonju Plant), HACCP certified (Iksan Plant), FSSC 22000 certified.",ingredients:["Para-Biotics (Heat-killed Lactobacillus)","Live Probiotic Strains","Prebiotic FOS","Digestive Enzymes"]},
+  "p052":{desc:"Pure Glow Omega-7 from Vitech features palmitoleic acid (omega-7) manufactured at Korea's first LNF facility. Vitech's FSSC 22000 certified scope specifically includes omega-7 production alongside probiotics. Supports skin hydration, mucosal membrane integrity, and cardiovascular health. 7-MEGA™ MFDS individually approved ingredient (2024.6.27). GMP, HACCP, Halal certified.",ingredients:["7-MEGA™ Omega-7 (Palmitoleic Acid, MFDS Approved 2024)","Sea Buckthorn Oil","Vitamin E"]},
+  "p053":{desc:"EA Hana Menopause (이알하나 메노포즈) by Cinnamon Lab features ERr731® — a MFDS-approved (Approval No. 2024-17) rhubarb root extract from Switzerland with 70+ years of use in Germany and registered with US FDA NDI and Canada NHP. Korea's smallest menopausal supplement (4.8mm tablet — Korea's first). Clinically improves 11 MRS menopausal indicators within 4 weeks at just 4mg/day (the lowest daily dose among all menopausal functional ingredients). Safe for long-term daily use. Brand ambassador: Korean actress Moon So-ri.",ingredients:["ERr731® (Rhubarb Root Extract, MFDS 2024-17, Swiss-made, 4mg/day)","Vitamin D3 10μg (100% DV)","Vitamin K1 70μg (100% DV)"]},
+  "p054":{desc:"EA Hana Plant-based Melatonin (이알하나 식물성 멜라토닌) by Cinnamon Lab offers plant-derived melatonin as a clean-label alternative to synthetic melatonin. Part of Cinnamon Lab's ER Hana women's health brand with philosophy of simple, transparent ingredients and minimal daily dose. Suitable for Southeast Asian markets. Free from synthetic melatonin, supporting regulatory compliance in markets where synthetic melatonin is restricted.",ingredients:["Plant-derived Melatonin","Supporting Sleep Botanicals","Minimal Clean-label Formula"]},
+  "p055":{desc:"EA Hana Immunity (이알하나 면역) by Cinnamon Lab is an immune support supplement in the ER Hana brand's daily wellness lineup. Follows the brand's core philosophy: simple formula, transparent ingredients, effective daily health habit. Part of Cinnamon Lab's Southeast Asia-focused export strategy. The brand is led by Bradley Kim (CEO) and Jerry Shin (COO) with a focus on women's specialized health functional foods.",ingredients:["Immune-support Botanical Blend","Vitamin C","Zinc","Functional Health Ingredients"]},
+  "p056":{desc:"LAB Fermented Garlic Extract Powder from Hyundai Bioland (KOSDAQ listed, established 1995) uses lactic acid bacteria fermentation to dramatically enhance bioavailability and eliminate harsh garlic odor while retaining potent allicin equivalent activity. Multiple patents registered (Patent 10-1559888, 10-1091833, 10-1670321). GMP certified (Ansan + Osong factories). Targeted for Southeast Asia (Thailand). $10 Million Export Award recipient.",ingredients:["LAB-Fermented Garlic Extract (Patented, Multiple Patents)","Allicin Precursors","Fermentation-Enhanced Bioactives"]},
+  "p057":{desc:"Red Balloon Flower Root Concentrate (홍도라지 농축액) from Hyundai Bioland. Multiple patents on platycodon-based extracts (Patent 10-2261973). Hyundai Bioland has established global-class manufacturing across Ansan (nutraceutical ingredients), Osong (cosmetic/pharmaceutical actives), Ochang (specialty), and Jeju (magma seawater) facilities. Clinically studied for respiratory health support and immune function. $10M Export Award recipient.",ingredients:["Red Balloon Flower (Platycodon grandiflorum) Root Concentrate","Platycodin Saponins","Polysaccharides","Patented Extract"]},
+  "p058":{desc:"Fermented Chestnut Inner Shell Extract Powder from Hyundai Bioland. Fermentation process enhances bioavailability of ellagitannins and polyphenols. Part of Hyundai Bioland's product catalog alongside LUNGTECT and LIVERTECT branded finished products. Multiple patents registered for this ingredient. Manufactured under GMP/BGMP standards. Targeted at Southeast Asia (Thailand) market.",ingredients:["Fermented Chestnut (Castanea) Inner Shell Extract","Ellagitannins","Urolithin A Precursor","Polyphenol Complex"]},
+  "p059":{desc:"OnRitual Slimming Cut Diet from Hecto Healthcare features Garcinia cambogia extract (HCA) + resistant maltodextrin as a dual-function MFDS-certified health functional food. Zero sugar jelly formula in a convenient portable stick (20g × 14 sachets). Garcinia cambogia inhibits carbohydrate-to-fat conversion for body fat reduction; resistant maltodextrin supports post-meal blood glucose control and bowel regularity. Blackberry flavor. GMP, HACCP certified.",ingredients:["Garcinia Cambogia Extract (HCA)","Resistant Maltodextrin","Chia Seed","Pomegranate Concentrate","Vitamin B2","Vitamin B6"]},
+  "p060":{desc:"OnRitual Reset V-Line from Hecto Healthcare uses French organic cactus fruit concentrate (Cactinea® 250mg) + calcium + magnesium to support body water balance management and sodium excretion. Sugar-free, sodium-free, stearin-free (3FREE formula). Kiwi flavor jelly stick (20g × 14 sachets). Cactinea® is a clinically backed ingredient for water retention management and body contouring. GMP, HACCP certified.",ingredients:["Cactinea® (French Organic Cactus Fruit Concentrate, 250mg)","Calcium","Magnesium","Resistant Maltodextrin","Pumpkin Extract","Peanut Sprout Extract","Chia Seed"]},
+  "p061":{desc:"OnRitual Healthy Green Cleanse from Hecto Healthcare is a green cleanse powder stick formula with kale, broccoli, cabbage, young barley, wheat, spinach, green tea extract, and mixed fruit powder. Supports dietary fiber and plant nutrient supplementation, vegetable intake maintenance, healthy eating habit management, and daily cleansing routine. Apple flavor, 4g × 14 sticks (56g). Dissolve 1 stick in 200ml water daily. GMP, HACCP certified.",ingredients:["Kale","Broccoli","Cabbage","Young Barley","Wheat","Spinach","Green Tea Extract","Mixed Fruit Powder"]},
+  "p062":{desc:"Wellfine is a GMP-certified OEM/ODM manufacturer from Gangwon Province, Korea specializing in collagen, calcium, jelly sticks, and liquid health functional foods. The Deep-Rich BE Vin Chaud is a warming botanical beverage product. Wellfine holds GMP, HACCP, KKMF HALAL, FSSC22000 certifications and actively targets China, Vietnam, US, and Taiwan markets. OEM/ODM custom formulation available.",ingredients:["Warming Botanical Blend","Natural Fruit Extract","Functional Botanical Ingredients"]},
+  "p063":{desc:"Wellfine's concentrated fruit aid (농축액) series for professional B2B applications. Wellfine specializes in custom formulation, raw material sourcing, and integrated quality management with GMP, HACCP, KKMF HALAL, FSSC22000 certifications. Available in 1.5kg format for café, restaurant, and food manufacturing use. Custom OEM/ODM formulations welcome.",ingredients:["Concentrated Fruit Extract Blend","Natural Fruit Polyphenols","Vitamin C","Natural Sweetener"]},
+  "p064":{desc:"HanPoYou Arginine Fit 6000+ & Black Maca Energy 2000+ from Wellfine. The Hanpoyu Diet Jelly DIETJE is a MFDS-certified dual-function health functional food combining Garcinia cambogia extract + resistant maltodextrin in a bergamot-flavored jelly stick (20g × 14 sachets). The Hanpoyu Cal-Madi D3+K2 is a 4-in-1 calcium formula (Ca + Mg + Vitamin D3 + Vitamin K2 MK-7) targeting middle-aged women. OEM/ODM supply possible. GMP, HACCP, KKMF HALAL, FSSC22000 certified.",ingredients:["Garcinia Cambogia Extract (HCA, MFDS Approved)","Resistant Maltodextrin","Calcium + Magnesium + Vitamin D3 + Vitamin K2 (MK-7)"]},
+  "p065":{desc:"Skin Master P.estro by HL Science is a powder stick inner beauty supplement containing P-estro BL Powder (pomegranate concentrate powder) — HL Science's MFDS-approved proprietary functional ingredient with human clinical trial data confirming 6-fold skin improvement. Also contains premium UK DSM Vitamin C and 4 premium co-ingredients: white tomato concentrate extract powder, low-molecular fish collagen, elastin hydrolysate, and milk protein concentrate powder. MFDS functions: skin moisturization, UV-induced skin damage protection. 4g × 30 sticks.",ingredients:["P-estro BL Powder (Pomegranate Concentrate, MFDS Approved, 6-fold skin improvement)","UK DSM Vitamin C","White Tomato Concentrate Extract","Low-Molecular Fish Collagen","Elastin Hydrolysate","Milk Protein Concentrate"]},
+  "p066":{desc:"Skin Master P.estro Glow Jelly by HL Science is a jelly stick inner beauty product featuring P-estro BL Powder (pomegranate concentrate, MFDS-approved, 6-fold skin improvement) with 3 premium co-ingredients: low-molecular fish collagen, Vitamin C, and elastin hydrolysate. MFDS functions: skin moisturization, UV-induced skin damage protection. 20g × 10 sticks. Portable, easy-to-consume jelly format. Launched February 2026, targeting women aged 20-30.",ingredients:["P-estro BL Powder (Pomegranate Concentrate, MFDS Approved)","Low-Molecular Fish Collagen","Vitamin C","Elastin Hydrolysate"]},
+  "p067":{desc:"Skin Master P.estro For Woman Jelly by HL Science is designed for menopausal women (ages 40-50) featuring P-estro HL (pomegranate juice concentrate) with 6 premium co-ingredients: fructooligosaccharides, biotin, black currant concentrate, elastin hydrolysate, Vitamin C, and low-molecular fish collagen. MFDS functions: women's menopausal health + skin moisturization + UV skin damage protection (triple function). Uses Turkish pomegranate. 20g × 15 sticks. Launched February 2026.",ingredients:["P-estro HL (Turkish Pomegranate Juice Concentrate, MFDS Approved, Triple Function)","Black Currant Concentrate","Low-Molecular Fish Collagen","Elastin Hydrolysate","Biotin","Vitamin C","Fructooligosaccharides"]},
+  "p068":{desc:"Collagen Tripeptide GPX-4™ by NewTree (Nutri) is a low-molecular weight collagen peptide produced via proprietary enzymatic hydrolysis from fish skin of Pangasius hypophthalmus. Standardized: total tri-peptide content ≥15%, marker compound Gly-Pro-Hyp (GPH) ≥3%, and GPX (Gly-Pro-X) ≥4%. Average MW below 1,000 Da for rapid systemic absorption. Upon ingestion, GPX-4™ rapidly reaches target areas to stimulate collagen and hyaluronic acid production — improving wrinkles and skin elasticity. Also activates chondrocytes and hair growth signals for joint and hair health.",ingredients:["Collagen Tripeptide GPX-4™ (Total Tripeptide ≥15%, GPH ≥3%, GPX ≥4%)","Gly-Pro-Hydroxyproline (GPH)","Gly-Pro-X tripeptides","Low-MW Fish Skin Collagen (<1,000 Da)"]},
+  "p069":{desc:"Fingerroot (Krachai, Boesenbergia rotunda) Extract Powder from NewTree (Nutri) — a company specialized in collagen and functional raw materials. Standardized for pinocembrin and panduratin A active compounds. Clinically studied for blood glucose regulation, anti-obesity, and anti-inflammatory properties. NewTree supplies to USA, Australia, Malaysia, and Indonesia markets. GMP/HACCP certified manufacturing.",ingredients:["Fingerroot Extract (Pinocembrin + Panduratin A)","Flavonoid Complex","Maltodextrin"]},
+  "p070":{desc:"INNERB Glow Ampoule/Stick by CJ Wellcare (subsidiary of CJ Group, Korea's leading food conglomerate) features CJ's proprietary PDRN technology. Available in collagen stick (30 sachets) and ampoule (6 sachets) formats. CJ Wellcare is a premium inner beauty brand leveraging CJ Group's pharmaceutical-grade manufacturing standards. INNERB uses pharmaceutical-level PDRN for skin cell regeneration, elasticity improvement, and brightening.",ingredients:["CJ Proprietary PDRN (Pharmaceutical-grade)","Marine Collagen Peptide","Glutathione","Vitamin C","Niacinamide","Hyaluronic Acid"]},
+  "p071":{desc:"INNERB PDRN Rise by CJ Wellcare features CJ's proprietary PDRN technology in stick and pouch formats (14 sachets). PDRN Rise is positioned for comprehensive cellular regeneration at the molecular level — supporting DNA repair, skin cell turnover, and anti-aging. CJ Wellcare is backed by CJ Group with world-class pharmaceutical-grade quality control and R&D infrastructure.",ingredients:["CJ Proprietary PDRN (Polydeoxyribonucleotide)","Collagen Peptide","Cellular Regeneration Actives"]},
+  "p072":{desc:"BYCORE Skin Immunity Probiotics by CJ Wellcare is a dual-function supplement combining CJ's proprietary skin immunity probiotic strain with inner beauty actives. The probiotic strain has clinically proven activity in improving skin barrier function, reducing skin sensitivity, and enhancing overall skin health. CJ Wellcare leverages CJ Group's extensive R&D and pharmaceutical-grade manufacturing to deliver evidence-based inner beauty and functional probiotic products.",ingredients:["CJ Proprietary Skin Immunity Probiotic Strain","Ceramide","Collagen Peptide","Vitamin E","Biotin","Zinc"]},
+};
+
+
+// 한국어 상품 설명
+const KR_PRODUCT_DETAIL = {
+  "p001":{desc:"편리한 젤리 스틱 형태의 프리미엄 해양 콜라겐 펩타이드 제품입니다. 매일 섭취하여 피부 탄력, 수분 유지, 젊고 빛나는 피부를 지원합니다. 건강을 중시하는 소비자를 위한 이동 중 섭취 가능한 뷰티 영양제입니다.",ingredients:["해양 콜라겐 펩타이드","비타민 C","히알루론산"]},
+  "p002":{desc:"천연 알로에 베라 추출물이 풍부한 상쾌한 알로에 젤리 스틱입니다. 소화 건강, 피부 수분 유지, 전반적인 웰빙을 지원합니다. 매일 사용하기 편리한 1회 분량 포맷입니다.",ingredients:["알로에 베라 추출물","비타민 E","천연 향료"]},
+  "p003":{desc:"연어 비연골에서 추출한 고농도 프로테오글리칸 성분으로 관절 건강과 연골 보호를 지원합니다. 임상적으로 연구된 성분으로 검증된 효능을 자랑합니다.",ingredients:["연어 비연골 추출물","프로테오글리칸","타입 II 콜라겐"]},
+  "p004":{desc:"이소플라본, 달맞이꽃 오일, 핵심 비타민을 포함한 갱년기 여성 전용 과학적 제형 제품입니다. 안면 홍조 완화, 호르몬 균형 지원, 갱년기 전반적인 활력 증진에 도움을 줍니다.",ingredients:["이소플라본","달맞이꽃 오일","비타민 B6","칼슘"]},
+  "p005":{desc:"포스파티딜세린과 은행잎 추출물을 결합한 인지 건강 보조제입니다. 기억력, 집중력, 정신적 명료함을 지원합니다. 인지 기능을 유지하려는 성인을 위해 설계되었습니다.",ingredients:["포스파티딜세린","은행잎 추출물","비타민 B12","오메가-3"]},
+  "p006":{desc:"강력한 장 정착력과 장 장벽 지원으로 유명한 C. 부티리쿰 균주를 포함한 차세대 프로바이오틱스입니다. 장 마이크로바이옴 균형과 소화 편안함을 임상적으로 검증하였습니다.",ingredients:["클로스트리디움 부티리쿰","락토바실러스 애시도필러스","프리바이오틱 FOS","비타민 D"]},
+  "p007":{desc:"프리미엄 브라질 그린 프로폴리스로 만든 맛있고 생체이용률이 높은 프로폴리스 보충제입니다. 면역 방어를 지원하고 천연 항균 성질을 가지며 매일 섭취하기 편리합니다.",ingredients:["브라질 그린 프로폴리스 추출물","비타민 C","아연","천연 꿀"]},
+  "p008":{desc:"그린 프로폴리스의 면역 증진 효능을 즐거운 맛으로 결합한 씹을 수 있는 프로폴리스 정제입니다. 효능을 유지하면서도 더 즐거운 보충제 경험을 원하는 소비자에게 완벽합니다.",ingredients:["그린 프로폴리스 추출물","마누카 꿀","비타민 C","엘더베리 추출물"]},
+  "p009":{desc:"기존 프로폴리스 대비 향상된 생체이용률을 가진 수용성 프로폴리스 분말(500g 벌크)입니다. 음료, 기능성 식품, 건강기능식품 제형에 적합한 B2B 원료입니다.",ingredients:["수용성 프로폴리스 추출물","말토덱스트린","천연 항산화제"]},
+  "p010":{desc:"혈당 조절 프로바이오틱스(HAC01 균주)와 시너지 식물 성분을 결합한 이중 작용 제품입니다. 건강한 혈당 대사와 장 마이크로바이옴 균형을 임상적으로 검증하였습니다.",ingredients:["락토바실러스 HAC01","베르베린 HCl","크롬 피콜리네이트","여주 추출물"]},
+  "p011":{desc:"면역 건강, 콜라겐 합성, 칼슘 흡수를 365일 지원하는 고용량 L-라이신 보충제입니다. 활동적인 성인과 노인을 위한 필수 아미노산 제형입니다.",ingredients:["L-라이신 HCl","비타민 C","아연","비타민 B6"]},
+  "p012":{desc:"6년근 정원삼(재배 인삼)으로 만든 에너지 증진 프리미엄 홍삼 스틱입니다. 진세노사이드가 풍부하여 체력, 면역 기능, 스트레스 저항력을 지원합니다.",ingredients:["6년근 고려홍삼 추출물","진세노사이드 Rg1+Rb1+Rg3","꿀","비타민 B 복합체"]},
+  "p013":{desc:"6년근 정원삼으로 만든 클래식 프리미엄 한국 홍삼 스틱입니다. 표준화된 진세노사이드 함량으로 일상적인 에너지와 면역 지원에 일관된 품질과 효능을 보장합니다.",ingredients:["6년근 고려홍삼 추출물","진세노사이드","로열 젤리","프로폴리스"]},
+  "p014":{desc:"한국 홍삼과 석류 추출물의 독특한 블렌드로 호르몬 균형, 항산화 보호, 활력을 지원합니다. 건강을 중시하는 여성을 위한 프리미엄 라이프스타일 보충제입니다.",ingredients:["한국 홍삼 추출물","석류 추출물","엘라그산","코엔자임 Q10"]},
+  "p015":{desc:"고객 요구사항에 맞게 제조되는 맞춤형 B2B 프로바이오틱스 솔루션입니다. 다양한 균주 조합, CFU 수치, 제형 포맷으로 제공됩니다. 전 세계 시장의 프라이빗 라벨 및 OEM 제조에 적합합니다.",ingredients:["맞춤형 프로바이오틱스 균주","프리바이오틱 블렌드","마이크로캡슐화 코팅","사양별 부형제"]},
+  "p016":{desc:"향상된 안정성과 유통기한을 가진 열처리 유익 균주를 특징으로 하는 차세대 B2B 포스트바이오틱스 솔루션입니다. 임상 검증된 포스트바이오틱스 제형을 원하는 OEM 파트너에게 이상적입니다.",ingredients:["열처리 락토바실러스 플란타룸","단쇄 지방산","세균 세포벽 성분","안정제"]},
+  "p017":{desc:"캡슐, 사쉐, 정제 제조에 적합한 고품질 프로바이오틱스 원료입니다. 유통기한까지 보장된 CFU 수치로 다양한 균주 옵션으로 제공됩니다. EU, 미국, 아시아 규제 기준에 부합합니다.",ingredients:["멀티 균주 프로바이오틱스 블렌드","FOS 프리바이오틱","미정질 셀룰로오스","스테아린산 마그네슘"]},
+  "p018":{desc:"MED-02는 장 건강 조절에 임상적으로 검증된 효능을 가진 특허 프로바이오틱스 균주입니다. 위장관을 통한 최대 생존을 보장하는 탁월한 산 및 담즙 저항성을 특징으로 합니다.",ingredients:["락티플란티바실러스 플란타룸 MED-02","동결보호제","이눌린"]},
+  "p019":{desc:"MED-19는 강력한 면역 조절 활성을 보이는 특화 프로바이오틱스 균주입니다. 면역 중심 보충제, 기능성 식품, 제약 등급 프로바이오틱스 제품 제형에 이상적입니다.",ingredients:["락토바실러스 람노수스 MED-19","프리바이오틱 FOS","마이크로캡슐화 쉘"]},
+  "p020":{desc:"LABISEN Supreme은 검증된 균주의 시너지 블렌드를 특징으로 하는 프리미엄 완제 프로바이오틱스 보충제입니다. 우수한 기호성으로 임상 등급 장 건강 지원을 원하는 소비자를 위해 설계되었습니다.",ingredients:["멀티 균주 프로바이오틱스 복합체","프리바이오틱 이눌린","비타민 D3","아연"]},
+};
+
+// 한국어 성분
+const KR_INGREDIENTS = {};
+
 /* ═══════════════ VIEWS ═══════════════ */
-const allViews=['home','aboutView','companyView','productTypeView','companyDetail','searchResults'];
+const allViews=['home','aboutView','companyView','productTypeView','companyDetail','productDetail','searchResults'];
 function showOnly(id){
   allViews.forEach(v=>{ document.getElementById(v).style.display='none'; });
   document.getElementById(id).style.display='block';
@@ -902,6 +1230,7 @@ function renderCompanyGrid(list){
     const tags=cats.map(cat=>`<span class="cat-tag" style="background:${catColor(cat)}">${catLabel(cat)}</span>`).join('');
     const dn=currentLang==='kr'?c.kr:c.en;
     const sn=currentLang==='kr'?c.en:c.kr;
+    const taglineHTML=c.tagline?`<div class="company-tagline">${c.tagline}</div>`:'';
     return `<div class="company-card" onclick="showCompanyDetail(${c.id})">
       <div class="company-logo">
         <img src="${c.logo}" alt="${c.en}" onerror="this.parentElement.textContent='${c.en}'"/>
@@ -909,6 +1238,7 @@ function renderCompanyGrid(list){
       <div class="company-name-en">${dn}</div>
       <div class="company-name-kr">${sn}</div>
       <div class="company-tags">${tags}</div>
+      ${taglineHTML}
     </div>`;
   }).join('');
 }
@@ -964,6 +1294,16 @@ function showCompanyDetail(compId){
       <div class="kr-name">${sn}</div>
       <div class="detail-cats">${cats.map(c=>`<span class="cat-tag" style="background:${catColor(c)}">${catLabel(c)}</span>`).join('')}</div>
     </div>`;
+
+  // 기업 소개 박스
+  const introHTML = comp.bio ? `
+    <div class="company-intro-box">
+      <div class="company-intro-text">
+        <p>${comp.bio}</p>
+        ${comp.badges && comp.badges.length ? `<div class="company-intro-badges">${comp.badges.map(b=>`<span class="company-intro-badge">${b}</span>`).join('')}</div>` : ''}
+      </div>
+    </div>` : '';
+  document.getElementById('detailIntro').innerHTML = introHTML;
   document.getElementById('detailProducts').innerHTML=prods.map(p=>productCardHTML(p,false)).join('');
   document.getElementById('detailBackBtn').textContent=t('backAll');
   document.getElementById('detailBackBtn').onclick=showCompanyView;
