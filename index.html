@@ -23,6 +23,16 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
 
+
+/* LOGO BAR */
+.logo-bar{background:#fff;padding:10px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee}
+.logo-bar-left{display:flex;align-items:center;gap:12px}
+.logo-khff{height:44px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:32px;background:#e0e0e0;flex-shrink:0}
+.logo-by-tridge{font-size:11px;color:#1A1A2E;font-weight:500}
+.logo-tridge{height:18px;width:auto;object-fit:contain}
+.logo-cphi{height:32px;width:auto;object-fit:contain}
+@media(max-width:640px){.logo-bar{padding:8px 16px}.logo-khff{height:34px}.logo-cphi{height:26px}}
 /* TOPBAR */
 #topbar{background:var(--ink);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar-inner{display:flex;align-items:center;gap:12px;height:60px;max-width:1280px;margin:0 auto;padding:0 32px}
@@ -46,7 +56,9 @@ img{max-width:100%;display:block}
 
 /* HERO */
 #hero{background:var(--ink);padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(0,168,120,.18) 0%,transparent 70%);pointer-events:none}
+#hero::after{content:'';position:absolute;inset:0;background:url('./images/hero_bg.jpg') center center/cover no-repeat;opacity:0.18;pointer-events:none;z-index:0}
+#hero>*{position:relative;z-index:1}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(0,168,120,.18) 0%,transparent 70%);pointer-events:none;z-index:1}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,168,120,.15);border:1px solid rgba(0,168,120,.3);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px}
 #hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;max-width:720px;margin-left:auto;margin-right:auto}
 #hero h1 em{color:var(--green);font-style:normal}
@@ -161,7 +173,9 @@ img{max-width:100%;display:block}
 /* ABOUT PAGE */
 #aboutView{padding-bottom:60px}
 .about-hero{background:var(--ink);border-radius:16px;padding:40px 36px;margin-bottom:28px;position:relative;overflow:hidden}
-.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 120%,rgba(0,168,120,.15) 0%,transparent 70%);pointer-events:none}
+.about-hero::after{content:'';position:absolute;inset:0;background:url('./images/hero_bg.jpg') center center/cover no-repeat;opacity:0.15;pointer-events:none;z-index:0;border-radius:16px}
+.about-hero>*{position:relative;z-index:1}
+.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 120%,rgba(0,168,120,.15) 0%,transparent 70%);pointer-events:none;z-index:1}
 .about-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(0,168,120,.15);border:0.5px solid rgba(0,168,120,.3);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:600;color:var(--green);letter-spacing:.06em;margin-bottom:16px}
 .about-hero h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:12px}
 .about-hero h2 em{color:var(--green);font-style:normal}
@@ -275,6 +289,17 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
 </style>
 </head>
 <body>
+
+<!-- LOGO BAR -->
+<div class="logo-bar">
+  <div class="logo-bar-left">
+    <img class="logo-khff" src="./images/logo_khff.png" alt="KHFF"/>
+    <div class="logo-divider"></div>
+    <span class="logo-by-tridge">by</span>
+    <img class="logo-tridge" src="./images/logo_tridge.png" alt="Tridge"/>
+  </div>
+  <img class="logo-cphi" src="./images/logo_cphi.png" alt="CPHI"/>
+</div>
 
 <!-- TOPBAR -->
 <div id="topbar">
@@ -535,7 +560,19 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
       <div class="modal-sub">Applications reviewed within 3 business days. Only 5 buyers will be invited to Seoul.</div>
       <span class="modal-close-btn" onclick="closeModal()">×</span>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" style="padding:0">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScj4_RBrb2UE16h6Hky4VfumuU1WZl5yNYrQExztzG6eV0yIw/viewform?embedded=true"
+        width="100%"
+        height="600"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        style="display:block">
+        Loading…
+      </iframe>
+    </div>
+    <div class="modal-body" style="display:none">
 
       <!-- SECTION 1 -->
       <div class="fm-sec">
@@ -671,7 +708,7 @@ footer{background:#0D1B2A;border-top:1px solid rgba(255,255,255,.06);margin-top:
       </div>
 
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" style="display:none">
       <div class="modal-privacy">🔒 Your data is used solely for matching purposes</div>
       <div style="display:flex;gap:10px">
         <button class="modal-cancel-btn" onclick="closeModal()">Cancel</button>
@@ -795,103 +832,128 @@ const companies = [
   {id:1,en:"Naturetech",kr:"네이처텍",logo:"./images/logo/naturetech.png",
    tagline:"Marine collagen & aloe jelly specialist · FSSC22000 · GMP certified",
    bio:"Naturetech is a Korean health functional food company specializing in collagen peptide and aloe-based jelly stick products. The company uses premium marine-derived ingredients with a focus on beauty-from-within nutrition, offering convenient single-serve formats for daily consumption.",
-   badges:["GMP Certified","FSSC22000","Marine Collagen"]},
+   badges:["GMP Certified","FSSC22000","Marine Collagen"],
+   bio_kr:"네이처텍은 해양 콜라겐 펩타이드 및 알로에 기반 젤리 스틱 전문 건강기능식품 기업입니다. 프리미엄 해양 유래 성분으로 이너뷰티 영양제를 1회 분량 포맷으로 개발합니다."},
   {id:2,en:"Medica Korea",kr:"메디카코리아",logo:"./images/logo/medicakorea.png",
    tagline:"Women's health & cognitive nutrition specialist · GMP certified",
    bio:"Medica Korea is a specialized health functional food company focused on women's health and cognitive nutrition. Their product line includes the internationally registered Mijac Plus for menopausal health and Never Forget for cognitive support, with multiple trademark registrations across global markets.",
-   badges:["Women's Health","Cognitive Health","International Trademarks"]},
+   badges:["Women's Health","Cognitive Health","International Trademarks"],
+   bio_kr:"메디카코리아는 여성 건강 및 인지 영양 전문 건강기능식품 기업입니다. 갱년기 건강 제품 미작 플러스와 인지 지원 제품 Never Forget은 다국가 상표 등록을 완료하였습니다."},
   {id:3,en:"Unique Biotech",kr:"유니크바이오텍",logo:"./images/logo/uniquebiotech.png",
    tagline:"World-Class propolis specialist · 9 patents · HALAL · Brand K certified",
    bio:"Unique Biotech Co., Ltd. is a global leader in water-soluble propolis technology. Their patented zero-alcohol, zero-emulsifier manufacturing process produces the world's first mass-produced water-soluble propolis powder. Designated as a 'World-Class Product' by the Korean government and certified as Brand K.",
-   badges:["9 Patents","World-Class Product","Brand K","HALAL","ISO22000","FSSC22000","GMP"]},
+   badges:["9 Patents","World-Class Product","Brand K","HALAL","ISO22000","FSSC22000","GMP"],
+   bio_kr:"유니크바이오텍은 수용성 프로폴리스 기술 글로벌 리더입니다. 특허 무알코올·무유화제 공정으로 세계 최초 수용성 프로폴리스 분말을 대량생산합니다. 정부 세계일류상품 지정, Brand K 인증 보유."},
   {id:4,en:"Atogen",kr:"에이투젠",logo:"./images/logo/atogen.png",
    tagline:"Microbiome R&D leader · 60%+ research workforce · GRAS · Halal certified",
    bio:"AtoGen is a microbiome-focused R&D company with 60%+ research workforce, developing microbiome therapeutics and high-functional health supplement ingredients from A to Z. They hold Korea's first individually approved probiotics for both blood sugar management (HAC01) and body fat reduction (ATG-K2), with multiple international award wins.",
-   badges:["MFDS Individually Approved","Self-Affirmed GRAS","KMF Halal","2025 Jang Yeong-sil Award"]},
+   badges:["MFDS Individually Approved","Self-Affirmed GRAS","KMF Halal","2025 Jang Yeong-sil Award"],
+   bio_kr:"에이투젠은 마이크로바이옴 R&D 전문 기업으로 연구인력 60%+를 보유합니다. 혈당 관리(HAC01)·체지방 감소(ATG-K2) 국내 최초 개별인정형 프로바이오틱스 두 가지를 보유하며 다수의 국내외 수상 경력을 자랑합니다."},
   {id:5,en:"Nature Garden",kr:"네이처가든",logo:"./images/logo/naturegarden.png",
    tagline:"6-year Korean red ginseng specialist · GMP · Export & duty-free markets",
    bio:"Nature Garden (subsidiary of Hyuram Co., Ltd.) is a premium Korean red ginseng manufacturer specializing in 6-year-old cultivated Jeongsam ginseng. Their products are available on Alibaba and AliExpress, and are designed for export and duty-free shop markets globally.",
-   badges:["6-Year Korean Red Ginseng","GMP Certified","Export Ready","Alibaba Listed"]},
+   badges:["6-Year Korean Red Ginseng","GMP Certified","Export Ready","Alibaba Listed"],
+   bio_kr:"네이처가든(모회사 휴럼)은 6년근 정원삼 홍삼 전문 제조사입니다. 알리바바·알리익스프레스 입점으로 수출·면세점 시장에 공급하며 GMP 인증 시설을 운영합니다."},
   {id:6,en:"Ildong Bioscience",kr:"일동바이오사이언스",logo:"./images/logo/ildongbio.png",
    tagline:"80 years of probiotics expertise · QShield® technology · 19+ IDCC strains",
    bio:"Backed by 80 years of probiotics expertise, Ildong Bioscience is South Korea's leading probiotic manufacturer. They develop scientifically proven, high-quality probiotic and postbiotic ingredients using patented QShield® quadruple-coating technology that improves stability by 20-25% versus uncoated strains.",
-   badges:["80 Years Expertise","QShield® Technology","19+ IDCC Strains","HALAL","Kosher","ISO22000"]},
+   badges:["80 Years Expertise","QShield® Technology","19+ IDCC Strains","HALAL","Kosher","ISO22000"],
+   bio_kr:"일동바이오사이언스는 80년 프로바이오틱스 노하우의 국내 대표 프로바이오틱스 제조사입니다. 특허 QShield® 4중 코팅 기술과 19종+ IDCC 균주를 보유하며 HALAL, Kosher, ISO22000 인증을 획득하였습니다."},
   {id:7,en:"Mediogen",kr:"메디오젠",logo:"./images/logo/mediogen.png",
    tagline:"Patented probiotic strains · HACCP · Clinical research-backed",
    bio:"Mediogen is a probiotic R&D company specializing in proprietary patented strains with full clinical documentation. Their portfolio includes MED-02 for gut health and MED-19 for immune modulation — both supported by Korean patents and peer-reviewed research. HACCP certified manufacturing facility.",
-   badges:["Patented Strains","HACCP Certified","Clinical Evidence","Pharmaceutical Grade"]},
+   badges:["Patented Strains","HACCP Certified","Clinical Evidence","Pharmaceutical Grade"],
+   bio_kr:"메디오젠은 특허 자체 균주와 임상 데이터를 갖춘 프로바이오틱스 R&D 기업입니다. 장 건강 MED-02, 면역 MED-19 등 한국 특허·학술지 기반 균주를 보유하며 HACCP 인증 제조시설을 운영합니다."},
   {id:8,en:"Dongwon F&B",kr:"동원에프엔비",logo:"./images/logo/dongwon.png",
    tagline:"Korea's leading food company · Premium red ginseng & inner beauty lineup",
    bio:"Dongwon F&B is one of Korea's most trusted and largest food companies, with decades of manufacturing excellence. Their health division offers premium Korean red ginseng products (Cheonjiin series) and inner beauty supplements (Beautique Collagen), combining heritage brand trust with modern health nutrition.",
-   badges:["Korea's Leading Food Company","GMP Certified","Premium Brand","Export Ready"]},
+   badges:["Korea's Leading Food Company","GMP Certified","Premium Brand","Export Ready"],
+   bio_kr:"동원에프엔비는 국내 최대 식품기업 중 하나입니다. 프리미엄 고려홍삼(천지인 시리즈)과 이너뷰티 보충제(Beautique 콜라겐)로 헤리티지 브랜드 신뢰와 현대 건강 영양을 결합합니다."},
   {id:9,en:"Seoul Propolis",kr:"서울프로폴리스",logo:"./images/logo/seoulpropolis.png",
    tagline:"WEEP technology pioneer · Co-developed with KAERI · GMP since 2018",
    bio:"Founded as a spin-off from Korea Atomic Energy Research Institute (KAERI) in 2003, Seoul Propolis co-developed the patented WEEP (Water-Emulsified Eco-friendly Propolis) technology in 2006 — the industry standard for alcohol-free, water-soluble propolis. GMP-certified factory since 2018, with multi-country market registrations.",
-   badges:["KAERI Spin-off","WEEP Patent","GMP 2018","Vietnam Registered","Multi-market"]},
+   badges:["KAERI Spin-off","WEEP Patent","GMP 2018","Vietnam Registered","Multi-market"],
+   bio_kr:"서울프로폴리스는 2003년 한국원자력연구원(KAERI) 스핀오프 기업으로 2006년 공동 개발한 특허 WEEP 기술을 보유합니다. 2018년 GMP 인증 공장 구축, 베트남 등 다국가 시장 등록 완료."},
   {id:10,en:"Webiom",kr:"위바이옴",logo:"./images/logo/webiom.png",
    tagline:"Probiotic ingredient · ODM · 14 proprietary strains · GRAS · GMP certified",
    bio:"weBiom Inc. is a comprehensive health supplement company at Korea's National Food Cluster in Iksan, integrating proprietary probiotic ingredient supply, ODM services, and finished product sales. Their state-of-the-art GMP facility produces difficult-to-culture strains, obligate anaerobes, and heat-killed postbiotics at commercial scale.",
-   badges:["GMP Certified","FSSC22000","HACCP","HALAL (KBL20066)","US GRAS","14 Proprietary Strains"]},
+   badges:["GMP Certified","FSSC22000","HACCP","HALAL (KBL20066)","US GRAS","14 Proprietary Strains"],
+   bio_kr:"위바이옴은 익산 국가식품클러스터 소재 기업으로 자체 프로바이오틱스 원료 공급·ODM·완제품 판매를 통합합니다. GMP 인증 시설에서 난배양 균주, 편성 혐기성균, 열처리 포스트바이오틱스를 상업 규모로 생산합니다."},
   {id:11,en:"Lactomason",kr:"락토메이슨",logo:"./images/logo/lactomason.png",
    tagline:"Patented & journal-certified probiotic strains · PROMUNE 1004 postbiotic",
    bio:"LactoMason is a Korean probiotic company with a portfolio of 14+ patent and journal-certified probiotic strains. Their flagship postbiotic ingredient PROMUNE 1004 (heat-treated L. plantarum LM1004) has completed a randomized double-blind clinical trial confirming NK cell activity enhancement for innate immune response.",
-   badges:["14+ Patent Strains","PROMUNE 1004","Clinical Trial","NK Cell Activity"]},
+   badges:["14+ Patent Strains","PROMUNE 1004","Clinical Trial","NK Cell Activity"],
+   bio_kr:"락토메이슨은 특허·학술지 인증 프로바이오틱스 균주 14종+ 포트폴리오를 보유합니다. 대표 포스트바이오틱스 PROMUNE 1004(열처리 L. plantarum LM1004)는 NK세포 활성 증진 무작위 이중맹검 임상을 완료하였습니다."},
   {id:12,en:"Handok Healthcare",kr:"한독헬스케어",logo:"./images/logo/handok.png",
    tagline:"Theracurmin® 42X · Theracurmin Super® 85X bioavailability · 34+ clinical studies",
    bio:"Handok Healthcare is the exclusive Korean distributor of Theracurmin® and Theracurmin Super® — the world's most clinically studied high-bioavailability curcumin ingredients. Theracurmin® is 42X and Theracurmin Super® is 85X more bioavailable than standard curcumin, backed by 34+ clinical studies.",
-   badges:["Theracurmin® 42X","Theracurmin Super® 85X","34+ Clinical Studies","Plant-Based"]},
+   badges:["Theracurmin® 42X","Theracurmin Super® 85X","34+ Clinical Studies","Plant-Based"],
+   bio_kr:"한독헬스케어는 테라큐민® 및 테라큐민 Super®의 국내 독점 공급사입니다. 테라큐민®은 일반 커큐민 대비 42배, 테라큐민 Super®는 85배 높은 생체이용률을 자랑하며 34건+ 임상 연구로 뒷받침됩니다."},
   {id:13,en:"BigSum Bio",kr:"빅썸바이오",logo:"./images/logo/bigsum.png",
    tagline:"OnBOOT™ patent holder · Lotte Chilsung subsidiary · Pharmacist-designed",
    bio:"BigSum Bio is a healthcare company and subsidiary of Lotte Chilsung Beverage, specializing in functional raw material development and product commercialization. They hold the patent for OnBOOT™ (Agastache rugosa extract, Patent No. 10-2538787) — a clinically proven caffeine-free cognitive arousal ingredient with EEG validation.",
-   badges:["OnBOOT™ Patent","Lotte Chilsung Subsidiary","GMP","HACCP","Pharmacist-Designed"]},
+   badges:["OnBOOT™ Patent","Lotte Chilsung Subsidiary","GMP","HACCP","Pharmacist-Designed"],
+   bio_kr:"빅썸바이오는 롯데칠성음료 계열사로 기능성 원료 개발 및 제품 상업화 전문 헬스케어 기업입니다. 특허 OnBOOT™(배초향 추출물, 10-2538787)은 EEG 임상으로 카페인 없는 인지 각성 효과가 검증되었습니다."},
   {id:14,en:"Kwangdong Health Bio",kr:"광동헬스바이오",logo:"./images/logo/kwangdong.png",
    tagline:"Morosil® · Lipofer® · FDA registered · GMP · ISO 9001 & 14001 · FSSC22000",
    bio:"Kwangdong Healthbio is a specialized functional ingredient and custom formulation company with two GMP-certified factories, FSSC22000, and FDA food facility registration. They offer a premium portfolio including Morosil® (clinically proven body fat reduction), Lipofer® iron, and MFDS-approved rosemary-grapefruit skin health ingredients.",
-   badges:["FDA Registered","2 GMP Factories","ISO 9001 & 14001","FSSC22000","Morosil®","Lipofer®"]},
+   badges:["FDA Registered","2 GMP Factories","ISO 9001 & 14001","FSSC22000","Morosil®","Lipofer®"],
+   bio_kr:"광동헬스바이오는 GMP 인증 공장 2개소, FSSC22000, FDA 식품시설 등록을 갖춘 기능성 원료·맞춤 제형 전문 기업입니다. 모로실®(체지방 감소), Lipofer® 철분, 식약처 승인 피부 건강 성분 등 프리미엄 포트폴리오를 보유합니다."},
   {id:15,en:"Amicogen",kr:"아미코젠",logo:"./images/logo/amicogen.png",
    tagline:"Proprietary enzyme engineering · Eco-friendly biotech · HALAL · Kosher · GMP",
    bio:"Amicogen is a global industrial biotechnology company specializing in proprietary enzyme engineering. They develop eco-friendly, high-quality healthcare biomaterials including Chinositol™ (D-Chiro-Inositol), Collagen Tripep20™, and GreenNAG™ — all produced via patented enzyme processes with zero chemical residues.",
-   badges:["Proprietary Enzyme Tech","MUI Halal","KMF Halal","SKS Kosher","GMP","FSSC22000","HACCP"]},
+   badges:["Proprietary Enzyme Tech","MUI Halal","KMF Halal","SKS Kosher","GMP","FSSC22000","HACCP"],
+   bio_kr:"아미코젠은 자체 효소 엔지니어링 기술 기반 글로벌 산업 바이오테크 기업입니다. Chinositol™(D-카이로-이노시톨), Collagen Tripep20™, GreenNAG™ 등 특허 효소 공법의 친환경 원료를 개발합니다."},
   {id:16,en:"Ilyang Pharmaceutical",kr:"일양약품",logo:"./images/logo/ilyang.png",
    tagline:"Pharmaceutical company since 1946 · $252M annual sales · GMP certified",
    bio:"IL-YANG Pharmaceutical is a leading Korean pharmaceutical company established in 1946 with over $252 million in annual sales. Their health supplement division leverages pharmaceutical-grade manufacturing standards to produce premium vitamin drinks and red ginseng extracts for export markets including Vietnam, Thailand, and Russia.",
-   badges:["Since 1946","$252M Sales","GMP Certified","Pharmaceutical Grade","Export Ready"]},
+   badges:["Since 1946","$252M Sales","GMP Certified","Pharmaceutical Grade","Export Ready"],
+   bio_kr:"일양약품은 1946년 창립, 연매출 2,520억+ 원의 국내 대표 제약기업입니다. 건강기능식품 사업부는 제약 수준 제조 기준으로 비타민 드링크, 홍삼 추출물을 생산하며 베트남·태국·러시아에 수출합니다."},
   {id:17,en:"NVP Healthcare",kr:"엔비피헬스케어",logo:"./images/logo/nvp.png",
    tagline:"Functional health supplement specialist · Southeast Asia focused",
    bio:"Since its founding in 2008, NVP Healthcare has been a NEXT Vision Pioneer — from developing functional lactic acid bacteria to conducting microbiome research. Leveraging pharmaceutical R&D capabilities, they secured Korea's first MFDS individually approved probiotics for liver health (NVP-1702), nasal/immune health (NVP-1703), and cognitive function (NVP-2106), while leading breakthroughs in microbiome-based novel drug development.",
-   badges:["Southeast Asia Focus","Thailand Market","Custom Formulations"]},
+   badges:["Southeast Asia Focus","Thailand Market","Custom Formulations"],
+   bio_kr:"엔비피헬스케어는 2008년 창립, 기능성 유산균 개발부터 마이크로바이옴 연구까지 혁신하는 기업입니다. 간 건강(NVP-1702), 코 면역(NVP-1703), 뇌 기능(NVP-2106) 국내 최초 개별인정형 프로바이오틱스 3종을 보유합니다."},
   {id:18,en:"Bitek",kr:"바이텍",logo:"./images/logo/bitek.png",
    tagline:"MFDS individually approved · Kiwibiotics® · 7-MEGA™ · Korea's first LNF facility",
    bio:"Vitech (Bitek) is Korea's first company with an LNF (Liquid Natural Fermentation) facility, specializing in probiotics, lactic acid bacteria, and omega-7. They hold two MFDS individually approved ingredients: Kiwibiotics® (2025) and 7-MEGA™ (2024). Prime Minister's Prize winner at 2019 Korea Food Outlook. FSSC22000, HACCP, GMP, Halal certified.",
-   badges:["Korea's 1st LNF Facility","Kiwibiotics® MFDS Approved","7-MEGA™ MFDS Approved","FSSC22000","HACCP","Halal"]},
+   badges:["Korea's 1st LNF Facility","Kiwibiotics® MFDS Approved","7-MEGA™ MFDS Approved","FSSC22000","HACCP","Halal"],
+   bio_kr:"바이텍은 국내 최초 LNF(액상 천연발효) 시설 보유 기업으로 프로바이오틱스·오메가-7 전문사입니다. Kiwibiotics®(2025), 7-MEGA™(2024) 식약처 개별인정형 2종 보유. 2019 국무총리상 수상."},
   {id:19,en:"Cinnamon Lab",kr:"시나몬랩",logo:"./images/logo/cinnamonlab.png",
    tagline:"ERr731® · Korea's smallest menopause tablet · MFDS 2024-17 · FDA NDI listed",
    bio:"Cinnamon Lab is a Seoul-based women's health specialist company behind the ER Hana brand. Their flagship product features ERr731® (MFDS Approval 2024-17), a Swiss-made rhubarb root extract with 70+ years of clinical use in Germany, registered with US FDA NDI and Canada NHP. Korea's first 4.8mm menopausal supplement tablet.",
-   badges:["ERr731® MFDS 2024-17","US FDA NDI","Canada NHP","4.8mm Tablet","Women's Health"]},
+   badges:["ERr731® MFDS 2024-17","US FDA NDI","Canada NHP","4.8mm Tablet","Women's Health"],
+   bio_kr:"시나몬랩은 서울 소재 여성 건강 전문 기업으로 ER Hana 브랜드를 운영합니다. ERr731®(식약처 2024-17, 스위스산 대황 뿌리)로 국내 최초 4.8mm 갱년기 최소 정제를 개발. 미국 FDA NDI·캐나다 NHP 등록 완료."},
   {id:20,en:"Hyundai Bioland",kr:"현대바이오랜드",logo:"./images/logo/hyundaibioland.png",
    tagline:"KOSDAQ listed · $10M Export Award · Multiple patents · 4 manufacturing sites",
    bio:"Hyundai Bioland (KOSDAQ listed, est. 1995) is a comprehensive biotech company with four specialized factories across Korea. They produce functional ingredients for cosmetics, nutraceuticals, and pharmaceuticals, holding multiple patents on fermented garlic, platycodon, and chestnut shell extracts. $10 Million Export Award recipient.",
-   badges:["KOSDAQ Listed","$10M Export Award","4 Factories","Multiple Patents","GMP/BGMP"]},
+   badges:["KOSDAQ Listed","$10M Export Award","4 Factories","Multiple Patents","GMP/BGMP"],
+   bio_kr:"현대바이오랜드는 1995년 창립 KOSDAQ 상장 바이오테크 기업입니다. 안산·오송·오창·제주 4개 전문 시설을 운영하며 발효 마늘·도라지·밤 껍질 추출물 다중 특허를 보유합니다. 수출의탑 1,000만 달러 수상."},
   {id:21,en:"Hecto Healthcare",kr:"헥토헬스케어",logo:"./images/logo/hecto.png",
    tagline:"Premium probiotics & inner beauty · Scientific R&D · Global supply",
    bio:"Hecto Healthcare Co., Ltd. is a specialized healthcare company providing premium health supplements and wellness solutions globally. Based on scientific research, quality management, and continuous innovation, they develop the OnRitual brand — a lineup of weight management and body care products for East Asia, North America, and Southeast Asia.",
-   badges:["GMP Certified","HACCP","OnRitual Brand","Global Export","Scientific R&D"]},
+   badges:["GMP Certified","HACCP","OnRitual Brand","Global Export","Scientific R&D"],
+   bio_kr:"헥토헬스케어는 과학적 연구·품질 관리 기반 글로벌 건강 보조제·웰니스 솔루션 전문 기업입니다. OnRitual 브랜드로 체중 관리·바디 케어 제품을 동아시아·북미·동남아 시장에 공급합니다."},
   {id:22,en:"Wellfine",kr:"웰파인",logo:"./images/logo/wellfine.png",
    tagline:"GMP OEM/ODM manufacturer · Gangwon · HALAL · FSSC22000 · Custom formulation",
    bio:"WellFine Co., Ltd. is a GMP-certified OEM/ODM health functional food manufacturer headquartered in Gangwon Province, Korea. Specializing in collagen, calcium, jelly sticks, and liquid functional foods, they offer integrated manufacturing solutions from custom formulation to quality management, actively targeting China, Vietnam, US, and Taiwan.",
-   badges:["GMP OEM/ODM","HACCP","KKMF HALAL","FSSC22000","Custom Formulation"]},
+   badges:["GMP OEM/ODM","HACCP","KKMF HALAL","FSSC22000","Custom Formulation"],
+   bio_kr:"웰파인은 강원도 소재 GMP 인증 OEM/ODM 건강기능식품 전문 제조사입니다. 콜라겐·칼슘·젤리스틱·액상 건기식 전문으로 맞춤 포뮬러부터 품질 관리까지 원스톱 솔루션 제공. GMP, HACCP, KKMF 할랄, FSSC22000 인증."},
   {id:23,en:"HL Science",kr:"에이치엘사이언스",logo:"./images/logo/hlscience.png",
    tagline:"P-estro™ · 6-fold skin improvement · MFDS approved · Korean & US patents",
    bio:"HL Science Co., Ltd. is a biotech R&D company with PhD-level researchers conducting clinical trials through integrated partnerships with universities, hospitals, and research institutes. Their proprietary P-estro ingredient (pomegranate-derived) holds MFDS approval with human clinical trial data confirming 6-fold skin improvement across moisturization, elasticity, and UV protection.",
-   badges:["P-estro™ MFDS Approved","Korean Patent","US Patent","Clinical Trial","PhD R&D Team"]},
+   badges:["P-estro™ MFDS Approved","Korean Patent","US Patent","Clinical Trial","PhD R&D Team"],
+   bio_kr:"에이치엘사이언스는 박사급 연구인력이 임상 수행하는 바이오테크 R&D 기업입니다. 자체 P-estro 성분(석류 유래)은 식약처 승인 및 인체 임상으로 6중 피부 개선을 확인. 한국·미국 특허 보유."},
   {id:24,en:"Nutri",kr:"뉴트리",logo:"./images/logo/nutri.png",
    tagline:"Collagen Tripeptide GPX-4™ · ≥15% tripeptide · Proprietary enzyme hydrolysis",
    bio:"NewTree (Nutri) is a Korean functional ingredient company specialized in collagen and botanical raw materials. Their flagship Collagen Tripeptide GPX-4™ is produced via proprietary enzymatic hydrolysis, standardized to ≥15% total tripeptide and ≥3% GPH marker compound. Exports to USA, Australia, Malaysia, and Indonesia.",
-   badges:["GPX-4™ ≥15% Tripeptide","Proprietary Enzyme Tech","GMP","HACCP","USA · Australia · Malaysia · Indonesia"]},
+   badges:["GPX-4™ ≥15% Tripeptide","Proprietary Enzyme Tech","GMP","HACCP","USA · Australia · Malaysia · Indonesia"],
+   bio_kr:"뉴트리는 콜라겐·기능성 원료 전문 기업입니다. 대표 원료 콜라겐 트리펩타이드 GPX-4™는 자체 효소 가수분해 생산으로 총 트리펩타이드 ≥15%, GPH ≥3% 표준화. 미국·호주·말레이시아·인도네시아 수출 중."},
   {id:25,en:"CJ Wellcare",kr:"씨제이웰케어",logo:"./images/logo/cjwellcare.png",
    tagline:"CJ Group subsidiary · Pharmaceutical-grade PDRN · INNERB premium brand",
    bio:"CJ Wellcare is a premium health and beauty supplement brand under CJ Group — Korea's leading food and life sciences conglomerate. Leveraging CJ Group's pharmaceutical-grade manufacturing infrastructure, CJ Wellcare develops INNERB, a premium inner beauty line featuring proprietary PDRN technology for skin cell regeneration, combined with collagen and probiotics.",
-   badges:["CJ Group Subsidiary","Pharmaceutical-grade PDRN","INNERB Brand","Premium Inner Beauty"]},
+   badges:["CJ Group Subsidiary","Pharmaceutical-grade PDRN","INNERB Brand","Premium Inner Beauty"],
+   bio_kr:"씨제이웰케어는 CJ그룹 계열 프리미엄 건강·뷰티 보충제 브랜드입니다. CJ그룹의 제약 수준 제조 인프라를 기반으로 자체 PDRN 기술의 INNERB 프리미엄 이너뷰티 라인을 개발합니다."},
 ];
 
 const products = [
@@ -1179,26 +1241,78 @@ const PRODUCT_DETAIL = {
 
 // 한국어 상품 설명
 const KR_PRODUCT_DETAIL = {
-  "p001":{desc:"편리한 젤리 스틱 형태의 프리미엄 해양 콜라겐 펩타이드 제품입니다. 매일 섭취하여 피부 탄력, 수분 유지, 젊고 빛나는 피부를 지원합니다. 건강을 중시하는 소비자를 위한 이동 중 섭취 가능한 뷰티 영양제입니다.",ingredients:["해양 콜라겐 펩타이드","비타민 C","히알루론산"]},
-  "p002":{desc:"천연 알로에 베라 추출물이 풍부한 상쾌한 알로에 젤리 스틱입니다. 소화 건강, 피부 수분 유지, 전반적인 웰빙을 지원합니다. 매일 사용하기 편리한 1회 분량 포맷입니다.",ingredients:["알로에 베라 추출물","비타민 E","천연 향료"]},
-  "p003":{desc:"연어 비연골에서 추출한 고농도 프로테오글리칸 성분으로 관절 건강과 연골 보호를 지원합니다. 임상적으로 연구된 성분으로 검증된 효능을 자랑합니다.",ingredients:["연어 비연골 추출물","프로테오글리칸","타입 II 콜라겐"]},
-  "p004":{desc:"이소플라본, 달맞이꽃 오일, 핵심 비타민을 포함한 갱년기 여성 전용 과학적 제형 제품입니다. 안면 홍조 완화, 호르몬 균형 지원, 갱년기 전반적인 활력 증진에 도움을 줍니다.",ingredients:["이소플라본","달맞이꽃 오일","비타민 B6","칼슘"]},
-  "p005":{desc:"포스파티딜세린과 은행잎 추출물을 결합한 인지 건강 보조제입니다. 기억력, 집중력, 정신적 명료함을 지원합니다. 인지 기능을 유지하려는 성인을 위해 설계되었습니다.",ingredients:["포스파티딜세린","은행잎 추출물","비타민 B12","오메가-3"]},
-  "p006":{desc:"강력한 장 정착력과 장 장벽 지원으로 유명한 C. 부티리쿰 균주를 포함한 차세대 프로바이오틱스입니다. 장 마이크로바이옴 균형과 소화 편안함을 임상적으로 검증하였습니다.",ingredients:["클로스트리디움 부티리쿰","락토바실러스 애시도필러스","프리바이오틱 FOS","비타민 D"]},
-  "p007":{desc:"프리미엄 브라질 그린 프로폴리스로 만든 맛있고 생체이용률이 높은 프로폴리스 보충제입니다. 면역 방어를 지원하고 천연 항균 성질을 가지며 매일 섭취하기 편리합니다.",ingredients:["브라질 그린 프로폴리스 추출물","비타민 C","아연","천연 꿀"]},
-  "p008":{desc:"그린 프로폴리스의 면역 증진 효능을 즐거운 맛으로 결합한 씹을 수 있는 프로폴리스 정제입니다. 효능을 유지하면서도 더 즐거운 보충제 경험을 원하는 소비자에게 완벽합니다.",ingredients:["그린 프로폴리스 추출물","마누카 꿀","비타민 C","엘더베리 추출물"]},
-  "p009":{desc:"기존 프로폴리스 대비 향상된 생체이용률을 가진 수용성 프로폴리스 분말(500g 벌크)입니다. 음료, 기능성 식품, 건강기능식품 제형에 적합한 B2B 원료입니다.",ingredients:["수용성 프로폴리스 추출물","말토덱스트린","천연 항산화제"]},
-  "p010":{desc:"혈당 조절 프로바이오틱스(HAC01 균주)와 시너지 식물 성분을 결합한 이중 작용 제품입니다. 건강한 혈당 대사와 장 마이크로바이옴 균형을 임상적으로 검증하였습니다.",ingredients:["락토바실러스 HAC01","베르베린 HCl","크롬 피콜리네이트","여주 추출물"]},
-  "p011":{desc:"면역 건강, 콜라겐 합성, 칼슘 흡수를 365일 지원하는 고용량 L-라이신 보충제입니다. 활동적인 성인과 노인을 위한 필수 아미노산 제형입니다.",ingredients:["L-라이신 HCl","비타민 C","아연","비타민 B6"]},
-  "p012":{desc:"6년근 정원삼(재배 인삼)으로 만든 에너지 증진 프리미엄 홍삼 스틱입니다. 진세노사이드가 풍부하여 체력, 면역 기능, 스트레스 저항력을 지원합니다.",ingredients:["6년근 고려홍삼 추출물","진세노사이드 Rg1+Rb1+Rg3","꿀","비타민 B 복합체"]},
-  "p013":{desc:"6년근 정원삼으로 만든 클래식 프리미엄 한국 홍삼 스틱입니다. 표준화된 진세노사이드 함량으로 일상적인 에너지와 면역 지원에 일관된 품질과 효능을 보장합니다.",ingredients:["6년근 고려홍삼 추출물","진세노사이드","로열 젤리","프로폴리스"]},
-  "p014":{desc:"한국 홍삼과 석류 추출물의 독특한 블렌드로 호르몬 균형, 항산화 보호, 활력을 지원합니다. 건강을 중시하는 여성을 위한 프리미엄 라이프스타일 보충제입니다.",ingredients:["한국 홍삼 추출물","석류 추출물","엘라그산","코엔자임 Q10"]},
-  "p015":{desc:"고객 요구사항에 맞게 제조되는 맞춤형 B2B 프로바이오틱스 솔루션입니다. 다양한 균주 조합, CFU 수치, 제형 포맷으로 제공됩니다. 전 세계 시장의 프라이빗 라벨 및 OEM 제조에 적합합니다.",ingredients:["맞춤형 프로바이오틱스 균주","프리바이오틱 블렌드","마이크로캡슐화 코팅","사양별 부형제"]},
-  "p016":{desc:"향상된 안정성과 유통기한을 가진 열처리 유익 균주를 특징으로 하는 차세대 B2B 포스트바이오틱스 솔루션입니다. 임상 검증된 포스트바이오틱스 제형을 원하는 OEM 파트너에게 이상적입니다.",ingredients:["열처리 락토바실러스 플란타룸","단쇄 지방산","세균 세포벽 성분","안정제"]},
-  "p017":{desc:"캡슐, 사쉐, 정제 제조에 적합한 고품질 프로바이오틱스 원료입니다. 유통기한까지 보장된 CFU 수치로 다양한 균주 옵션으로 제공됩니다. EU, 미국, 아시아 규제 기준에 부합합니다.",ingredients:["멀티 균주 프로바이오틱스 블렌드","FOS 프리바이오틱","미정질 셀룰로오스","스테아린산 마그네슘"]},
-  "p018":{desc:"MED-02는 장 건강 조절에 임상적으로 검증된 효능을 가진 특허 프로바이오틱스 균주입니다. 위장관을 통한 최대 생존을 보장하는 탁월한 산 및 담즙 저항성을 특징으로 합니다.",ingredients:["락티플란티바실러스 플란타룸 MED-02","동결보호제","이눌린"]},
-  "p019":{desc:"MED-19는 강력한 면역 조절 활성을 보이는 특화 프로바이오틱스 균주입니다. 면역 중심 보충제, 기능성 식품, 제약 등급 프로바이오틱스 제품 제형에 이상적입니다.",ingredients:["락토바실러스 람노수스 MED-19","프리바이오틱 FOS","마이크로캡슐화 쉘"]},
-  "p020":{desc:"LABISEN Supreme은 검증된 균주의 시너지 블렌드를 특징으로 하는 프리미엄 완제 프로바이오틱스 보충제입니다. 우수한 기호성으로 임상 등급 장 건강 지원을 원하는 소비자를 위해 설계되었습니다.",ingredients:["멀티 균주 프로바이오틱스 복합체","프리바이오틱 이눌린","비타민 D3","아연"]},
+  "p001":{desc:"편리한 젤리 스틱 형태의 프리미엄 해양 콜라겐 펩타이드 제품입니다. 매일 섭취하여 피부 탄력, 수분 유지, 젊고 빛나는 피부를 지원합니다.",ingredients:["해양 콜라겐 펩타이드","비타민 C","히알루론산"]},
+  "p002":{desc:"천연 알로에 베라 추출물이 풍부한 상쾌한 알로에 젤리 스틱입니다. 소화 건강, 피부 수분 유지, 전반적인 웰빙을 지원합니다.",ingredients:["알로에 베라 추출물","비타민 E","천연 향료"]},
+  "p003":{desc:"연어 비연골 추출 고농도 프로테오글리칸으로 관절 건강과 연골 보호를 지원합니다. 임상 검증 성분.",ingredients:["연어 비연골 추출물","프로테오글리칸","타입 II 콜라겐"]},
+  "p004":{desc:"이소플라본, 달맞이꽃 오일 함유 갱년기 여성 전용 제품입니다. 안면 홍조 완화, 호르몬 균형 지원.",ingredients:["이소플라본","달맞이꽃 오일","비타민 B6","칼슘"]},
+  "p005":{desc:"포스파티딜세린과 은행잎 추출물 결합 인지 건강 보조제입니다. 기억력, 집중력, 정신적 명료함 지원.",ingredients:["포스파티딜세린","은행잎 추출물","비타민 B12","오메가-3"]},
+  "p006":{desc:"C. 부티리쿰 균주 포함 차세대 프로바이오틱스입니다. 장 마이크로바이옴 균형과 소화 편안함 임상 검증.",ingredients:["클로스트리디움 부티리쿰","락토바실러스 애시도필러스","프리바이오틱 FOS","비타민 D"]},
+  "p007":{desc:"특허 수용성 기술(WEEP) 적용 프로폴리스 제품. 플라보노이드 21.25mg/회 함유. 면역 방어 지원. 정부 세계일류상품 지정, Brand K 인증.",ingredients:["수용성 프로폴리스 추출물 (총 플라보노이드 21.25mg/회)","천연 감미료"]},
+  "p008":{desc:"4중 기능(항균+면역+항산화+세포보호) 씹는 프로폴리스 정제. 플라보노이드 20.895mg/2정. 차세대 세계일류상품 지정, ISO22000, FSSC22000, GMP 인증.",ingredients:["수용성 프로폴리스 추출물","아연","비타민 C","셀레늄"]},
+  "p009":{desc:"세계 최초 대량생산 수용성 프로폴리스 분말(500g). 알코올·유화제·화학첨가물 제로. 플라보노이드 50mg/g. B2B 식품·의약품·화장품 적용 가능.",ingredients:["수용성 프로폴리스 추출물 (플라보노이드 50mg/g)","말토덱스트린"]},
+  "p010":{desc:"국내 최초 혈당 관리 개별인정형 프로바이오틱스(HAC01). 2023 특허기술대상, 2024 뉴트라 인그리디언츠 아시아 수상. GRAS, KMF 할랄 인증.",ingredients:["락티플란티바실러스 플란타룸 HAC01","베르베린 HCl","크롬 피콜리네이트","여주 추출물"]},
+  "p011":{desc:"국내 최초 체지방 감소 개별인정형 프로바이오틱스(ATG-K2). 체지방량 및 체지방률 감소 임상 확인. 1캡슐/일.",ingredients:["락티플란티바실러스 플란타룸 ATG-K2","프리바이오틱","캡슐 쉘"]},
+  "p012":{desc:"6년근 정원삼 기반 에너지 증진 프리미엄 홍삼 스틱. 19종 한방 성분, 100% 국내산 홍삼 농축액. 100스틱 수출·면세점 패키지.",ingredients:["100% 6년근 고려홍삼 농축액","진세노사이드 Rg1+Rb1+Rg3","꿀","비타민 B 복합체"]},
+  "p013":{desc:"6년근 정원삼 클래식 홍삼 스틱. 진세노사이드 7mg/스틱, 13종 한방 성분. 일상 에너지·면역 지원.",ingredients:["6년근 고려홍삼 추출물 (진삼)","진세노사이드 7mg/스틱","13종 한방 성분"]},
+  "p014":{desc:"홍삼·석류 블렌드 스틱. 진세노사이드 9mg/스틱, 특허 3중 가공, 13종 한방 성분. 호르몬 균형·항산화·활력 지원.",ingredients:["6년근 고려홍삼 농축액","석류 추출물","진세노사이드 9mg/스틱","13종 한방 성분"]},
+  "p015":{desc:"80년 노하우 기반 맞춤형 B2B 프로바이오틱스. 특허 QShield® 4중 코팅(안정성 20~25% 향상). 19종+ IDCC 균주. HALAL, Kosher, ISO22000 인증.",ingredients:["맞춤형 IDCC 프로바이오틱스 균주 (19종+)","QShield® 4중 코팅","프리바이오틱 블렌드"]},
+  "p016":{desc:"일동바이오사이언스 포스트바이오틱스 솔루션. RHT3201® + BBR4401® 임상 검증 성분. 냉장 불필요 우수 안정성.",ingredients:["L. rhamnosus IDCC 3201 틴달라이제이트 (RHT3201®)","열처리 B. breve IDCC 4401 (BBR4401®)","프리바이오틱"]},
+  "p017":{desc:"19종+ IDCC 균주 프로바이오틱스 원료. 전 단계 엄격 QC. EU·미국·아시아 규제 기준 부합. QShield® 코팅 옵션.",ingredients:["멀티 균주 IDCC 프로바이오틱스 블렌드","QShield® 코팅 (선택)","동결보호제"]},
+  "p018":{desc:"메디오젠 특허 균주 MED-02. 장 건강 조절 임상 검증. 탁월한 산·담즙 저항성. HACCP 인증 제조시설.",ingredients:["락티플란티바실러스 플란타룸 MED-02","동결보호제","이눌린"]},
+  "p019":{desc:"메디오젠 특허 균주 MED-19. 강력한 면역 조절 활성. 한국 특허·학술지 기반. 면역 중심 보충제·기능성 식품 제형 적합.",ingredients:["락토바실러스 람노수스 MED-19","프리바이오틱 FOS","마이크로캡슐화 쉘"]},
+  "p020":{desc:"메디오젠 자체 균주 포트폴리오 기반 프리미엄 완제 프로바이오틱스. 우수한 기호성으로 임상 등급 장 건강 지원.",ingredients:["멀티 균주 메디오젠 프로바이오틱스 복합체","프리바이오틱 이눌린","비타민 D3","아연"]},
+  "p021":{desc:"동원에프엔비의 고급 이너뷰티 보충제. 고농도 해양 콜라겐·엘라스틴·히알루론산 함유. 피부 탄력 개선, 주름 감소. 일본·베트남 시장 타겟.",ingredients:["해양 콜라겐 펩타이드","엘라스틴","히알루론산","비타민 C","나이아신아마이드"]},
+  "p022":{desc:"동원에프엔비의 6년근 홍삼 절편. 최대 진세노사이드 함량 보존. 동아시아·동남아시아·북미 시장 인기 전통 제품.",ingredients:["한국 홍삼 (6년근, 절편)","진세노사이드 Rg1+Rb1"]},
+  "p023":{desc:"동원에프엔비의 어린이·가족 대상 홍삼 스틱. 인기 캐릭터 타요 협업, 사과맛. 어린이 친화적 포맷.",ingredients:["한국 홍삼 추출물","사과 향","비타민 C","아연","천연 감미료"]},
+  "p024":{desc:"서울프로폴리스 특허 WEEP 기술 수용성 프로폴리스 추출물 원료. 한국원자력연구원(KAERI) 2006년 공동 개발. B2B 건기식·식품·의약품·화장품 적용.",ingredients:["수용성 프로폴리스 추출물 (WEEP 기술)","총 폴리페놀","카페인산 페네틸 에스테르 (CAPE)","총 플라보노이드"]},
+  "p025":{desc:"서울프로폴리스 WEEP 기술 적용 프로폴리스 에멀 스프레이. 베트남 보건부 인증, Brand K 인증. 탁월한 생체이용률. 다국가 국제 등록 완료.",ingredients:["WEEP 수용성 프로폴리스 에멀션","비타민 C","아연","페퍼민트 오일"]},
+  "p026":{desc:"서울프로폴리스 WEEP 기술 적용 프로폴리스 에멀 스틱. 탁월한 흡수력으로 일상 면역 지원. 다국가 국제 등록 완료.",ingredients:["WEEP 수용성 프로폴리스 에멀션","비타민 C","엘더베리 추출물","천연 꿀"]},
+  "p027":{desc:"위바이옴 14종 자체 KBL 프로바이오틱스·포스트바이오틱스 원료 포트폴리오. 아커만시아 KBL983(혈당·체지방), KBL396(정신건강), KBL1036(수면). 미국 GRAS 다수 승인.",ingredients:["14종 자체 KBL 균주","아커만시아 KBL983 (대사)","L. plantarum KBL396 (정신건강)","L. lactis KBL1036 (수면)"]},
+  "p028":{desc:"위바이옴 care:BIOTICS. 5종 KBL 균주, 100억 CFU/2캡슐 보장. 친환경 리필 패키지. GMP, HACCP, FSSC22000, HALAL(KBL20066) 인증. MOQ 100세트.",ingredients:["L. paracasei KBL384","L. rhamnosus KBL352","L. plantarum KBL20066","L. fermentum KBL375","L. reuteri KBL346"]},
+  "p029":{desc:"성장기 어린이 딸기맛 칼슘 젤리 건강기능식품. 칼슘+아연으로 뼈 발달·면역 동시 지원. 15g/포, 1일 1포. MOQ 100세트.",ingredients:["칼슘","아연","딸기 향","비타민 D3","천연 감미료"]},
+  "p030":{desc:"PROMUNE 1004 - 락토메이슨 열처리 L. plantarum LM1004 포스트바이오틱스. NK세포 활성 증가 무작위 이중맹검 임상 확인(8주, 100mg/일). 특허·학술지 인증 균주.",ingredients:["열처리 L. plantarum LM1004 (PROMUNE 1004)","세포벽 성분","100mg당 200억 포스트바이오틱 세포"]},
+  "p031":{desc:"락토메이슨 MYLACTO 시리즈. 열처리 LM1004 포스트바이오틱스 + 생균 결합. C PLUS(500억), S PLUS(200억 가족용), KIDS PLUS(100억), SKIN(히알루론산 함유) 라인업.",ingredients:["L. plantarum LM1001","L. reuteri LM1071","B. animalis lactis LM1017","열처리 L. plantarum LM1004 (PROMUNE 1004)","B. longum LM1024"]},
+  "p032":{desc:"락토메이슨 14종+ 특허·학술지 인증 프로바이오틱스 원료 균주. LM1001, LM1071, LM1011/1019, LM1017, LM1024 등. 생균 및 포스트바이오틱스 형태 제공.",ingredients:["L. paracasei LM1010","L. reuteri LM1071","L. plantarum LM1001","B. longum LM1024","L. rhamnosus LM1019"]},
+  "p033":{desc:"테라큐민® - 콜로이드 분산 기술 특허 고흡수 커큐민, 일반 대비 42배 생체이용률. 하루 180mg, 추가 흡수 증진제 불필요. 관절·심혈관·인지·항염 34건+ 임상.",ingredients:["테라큐민® (콜로이드 커큐민, 42배 생체이용률)","검 가티","글리세린","정제수"]},
+  "p034":{desc:"테라큐민 Super® - 세계 최초 무정형 전환 커큐민, 일반 대비 85배 생체이용률. 특허 ACT 기술. 산화 스트레스 바이오마커 감소 임상(71명, 8주) 확인.",ingredients:["테라큐민 Super® (무정형 커큐민, 85배 생체이용률)","ACT 무정형 전환 매트릭스"]},
+  "p035":{desc:"4중 에너지 시스템 분말 스틱. 포도당+전해질(WHO ORS 기준)+비타민 6종(RDA 100%)+OnBOOT™(특허 배초향, 10-2538787). 카페인 없는 인지 각성. 레몬맛 10g × 20스틱.",ingredients:["포도당","전해질 (WHO ORS 기준)","비타민 6종 (RDA 100%)","OnBOOT™ (특허 배초향 추출물)"]},
+  "p036":{desc:"카페인 없는 인지 에너지 포뮬러. L-아르기닌 3,000mg+시트룰린+오르니틴+OnBOOT™. EEG 임상: 30분 내 졸음 감소·각성·집중력 증가 확인. 30g × 14파우치.",ingredients:["L-아르기닌 3,000mg","타우린 500mg","L-오르니틴 HCl 500mg","OnBOOT™ (배초향, 행동과학지 IF2.5)","비타민 B1/B6/B12"]},
+  "p037":{desc:"국내 최초 액상 멀티미네랄. 7종 미네랄, MFDS 11가지 기능성. 칼슘 210mg+마그네슘 200mg+아연 8mg+셀레늄 40μg+망간+구리+몰리브덴. 레몬맛 22g × 30스틱.",ingredients:["칼슘 210mg","마그네슘 200mg","아연 8mg","셀레늄 40μg","망간·구리·몰리브덴","죽염+비타민B6+요오드"]},
+  "p038":{desc:"광동헬스바이오 모로실®+바나바 정제. 모로실®: 식약처 개별인정형, 시칠리아 PGI 인증. 6개월 임상: 체중 -4.2%, BMI -3.8%, 내장지방 -14.2%.",ingredients:["모로실® (모로 오렌지, PGI 시칠리아, 400mg/일)","바나바잎 추출물 (코로솔산)","크롬"]},
+  "p039":{desc:"스페인 Monteloeder 로즈마리·자몽 피부 건강 성분(허가 2019-25). 임상 90명 8주: 자외선 보호 증가, 피부 탄력 개선, 눈가 주름 감소. 글루타치온 효모 100mg+8종 비타민.",ingredients:["로즈마리·자몽 추출물 (Monteloeder, 허가 2019-25)","전해질 블렌드","글루타치온 효모 100mg","8종 비타민"]},
+  "p040":{desc:"Lipofer® 마이크로캡슐 철분 적용 녹는 분말. 금속 맛 최소화, 소화 불편감 제로, 우수 흡수율 임상 검증. 여성·산전산후·어린이 철분 보충 적합.",ingredients:["Lipofer® 마이크로캡슐 철분","비타민 C","엽산","비타민 B12"]},
+  "p041":{desc:"아미코젠 Chinositol™ - 터키산 캐럽 콩 100% 식물성 D-카이로-이노시톨(DCI), 순도 95%+. PCOS·임신성 당뇨·인슐린 저항성 개선 임상. MOQ 100kg. MUI·KMF 할랄, SKS 코셔 인증.",ingredients:["D-카이로-이노시톨 Chinositol™ (≥95%, 터키산 캐럽)","Non-GMO, 식물성"]},
+  "p042":{desc:"아미코젠 Collagen Tripep20™ - 자체 Collagenase BP 효소 생산 피쉬 콜라겐 트리펩타이드. GPH ≥3.2%, 평균 분자량 500Da 미만. 피부 수분·주름·탄력 임상. MOQ 500kg.",ingredients:["피쉬 콜라겐 트리펩타이드 Collagen Tripep20™ (GPH ≥3.2%, <500Da)","글리-프로-히드록시프롤린 (GPH)","히드록시프롤린","글리신","프롤린"]},
+  "p043":{desc:"아미코젠 GreenNAG™ - 100% 친환경 효소 공법 N-아세틸글루코사민. 화학 잔류물 제로. 국내산 홍게 껍데기 키틴 원료. 관절·연골 건강, 피부 보습. MOQ 100kg. KMF 할랄.",ingredients:["N-아세틸글루코사민 GreenNAG™ (효소 공법, 화학 잔류물 제로)","국내산 홍게 껍데기 키틴"]},
+  "p044":{desc:"1946년 창립 일양약품의 액상 마그네슘 보충제. 고흡수 마그네슘으로 근육 이완·신경계·에너지 대사·수면 품질 지원. 베트남 수출 중.",ingredients:["마그네슘 (액상 포뮬러)","비타민 B6","타우린"]},
+  "p045":{desc:"일양약품 비타민 C&B 복합 드링크. 항산화 보호와 에너지 지원. 전체 B비타민 스펙트럼으로 세포 에너지 생산·면역 기능 지원.",ingredients:["비타민 C (1,000mg)","비타민 B1","비타민 B2","비타민 B6","비타민 B12","나이아신아마이드","판토텐산"]},
+  "p046":{desc:"일양약품 홍삼 농축 추출물 보충제. 표준화된 진세노사이드로 일상 에너지·면역 회복력·인지 성능 지원.",ingredients:["한국 홍삼 추출물","진세노사이드 Rg1+Rb1+Rg3 (≥2.5mg)","로열 젤리","꿀"]},
+  "p047":{desc:"엔비피헬스케어 바이크롬 간 유산균(NVP-1702) - 국내 최초 간 건강 개별인정형 프로바이오틱스. L. plantarum LC27+B. longum LC67 이중 균주로 알코올성·비알코올성 지방간 개선 임상. 유산균 증식·유해균 억제·장 건강 지원. 500mg × 30캡슐.",ingredients:["L. plantarum LC27+B. longum LC67 (NVP-1702, 식약처 개별인정형)","500mg × 1캡슐 / 30캡슐 × 1박스"]},
+  "p048":{desc:"엔비피헬스케어 바이크롬 코 유산균(NVP-1703) - 국내 최초 코 면역 개별인정형 프로바이오틱스. L. plantarum IM76+B. longum IM55로 알레르기성 비염 개선 임상. 성인 캡슐(450mg × 30)·어린이 코코 사쉐(2g × 30) 제공.",ingredients:["L. plantarum IM76+B. longum IM55 (NVP-1703, 식약처 개별인정형)","성인 캡슐 450mg × 30 / 어린이 사쉐 2g × 30"]},
+  "p049":{desc:"엔비피헬스케어 바이크롬 뇌 유산균(NVP-2106) - 국내 최초 뇌 기능(인지) 개별인정형 프로바이오틱스. L. mucosae NK41+B. longum NK46으로 노화 인지 기능 개선 임상. 유산균 증식·유해균 억제·장 건강 지원. 450mg × 30캡슐.",ingredients:["L. mucosae NK41+B. longum NK46 (NVP-2106, 식약처 개별인정형)","450mg × 1캡슐 / 30캡슐 × 1박스"]},
+  "p050":{desc:"바이텍 Kiwibiotics® - 발효 황금 키위 기반 식약처 개별인정형 프리바이오틱스(2025.5.12). 국내 최초 LNF 시설 제조. 장 건강·면역·소화 지원. FSSC22000, HACCP, GMP, 할랄 인증.",ingredients:["Kiwibiotics® (식약처 개별인정형, 발효 황금 키위)","키위 폴리사카라이드","악티니딘 효소","식이섬유"]},
+  "p051":{desc:"바이텍 속편한 세상 파라바이오틱스. 열처리 사균+생균 이중 장 건강. 면역·관절·피부·위장·호흡기·간 건강 분야 역량. GMP, HACCP, FSSC22000 인증.",ingredients:["파라바이오틱스 (열처리 락토바실러스)","생균 프로바이오틱스","프리바이오틱 FOS","소화효소"]},
+  "p052":{desc:"바이텍 퓨어글로우 오메가7. 국내 최초 LNF 시설 제조. 7-MEGA™ 식약처 개별인정형(2024.6.27). 피부 보습·점막 보호·심혈관 건강. GMP, HACCP, 할랄.",ingredients:["7-MEGA™ 오메가-7 (파마로레이산, 식약처 승인 2024)","비타민 E"]},
+  "p053":{desc:"시나몬랩 이알하나 메노포즈 - ERr731®(식약처 2024-17, 스위스산 대황 뿌리) 함유. 독일 70년+ 사용, 미국 FDA NDI·캐나다 NHP 등록. 국내 최초 4.8mm 갱년기 최소 정제. 4주 내 MRS 11개 지표 개선.",ingredients:["ERr731® (대황 뿌리, 식약처 2024-17, 스위스산, 4mg/일)","비타민 D3 10μg","비타민 K1 70μg"]},
+  "p054":{desc:"시나몬랩 이알하나 식물성 멜라토닌. 합성 멜라토닌 제로, 식물 유래 멜라토닌 원료. 클린 라벨·합성 멜라토닌 규제 국가 적합. ER Hana 브랜드 핵심: 심플 성분, 투명 원료.",ingredients:["식물 유래 멜라토닌","수면 지원 식물성 복합체","클린 라벨 포뮬러"]},
+  "p055":{desc:"시나몬랩 이알하나 면역. ER Hana 브랜드 일상 면역 지원 제품. 심플 성분·효과적 일상 건강 습관 철학. 동남아시아 수출 전략 중심.",ingredients:["면역 지원 식물성 복합체","비타민 C","아연","기능성 건강 성분"]},
+  "p056":{desc:"현대바이오랜드(KOSDAQ 상장, 1995 창립) 특허 유산균 발효 마늘 추출 분말. 발효로 생체이용률 향상·마늘 냄새 제거. 특허 등록(10-1559888 외). GMP 인증. 수출의탑 1,000만 달러 수상.",ingredients:["유산균 발효 마늘 추출물 (다중 특허)","알리신 전구체","발효 증진 생리활성물질"]},
+  "p057":{desc:"현대바이오랜드 홍도라지 농축액. 플라티코돈 추출물 다중 특허(10-2261973 외). 4개 글로벌 수준 제조시설. 호흡기 건강·면역 기능 지원. 수출의탑 1,000만 달러 수상.",ingredients:["홍도라지 뿌리 농축액","플라티코딘 사포닌","다당류","특허 추출물"]},
+  "p058":{desc:"현대바이오랜드 발효 율피(밤 속껍질) 추출 분말. 발효 공법으로 엘라지타닌·폴리페놀 생체이용률 향상. 항산화·대사 건강 효과. GMP/BGMP 제조.",ingredients:["발효 밤 속껍질 추출물","엘라지타닌","우로리틴 A 전구체","폴리페놀 복합체"]},
+  "p059":{desc:"헥토헬스케어 OnRitual 슬리밍컷 다이어트. 가르시니아캄보지아 HCA+난소화성말토덱스트린 이중 식약처 기능성. 설탕 0g 젤리, 블랙베리맛 20g × 14포. GMP, HACCP 인증.",ingredients:["가르시니아캄보지아 추출물 (HCA)","난소화성말토덱스트린","치아씨드","석류 농축액","비타민 B2","비타민 B6"]},
+  "p060":{desc:"헥토헬스케어 OnRitual 리셋 브이라인. Cactinea® 250mg(프랑스 유기농 선인장)+칼슘+마그네슘으로 체내 수분 밸런스·나트륨 배출 지원. 설탕·나트륨·스테아린 3FREE. 키위맛 20g × 14포.",ingredients:["Cactinea® (프랑스 유기농 선인장 열매, 250mg)","칼슘","마그네슘","난소화성말토덱스트린","호박 추출물","치아씨드"]},
+  "p061":{desc:"헥토헬스케어 OnRitual 헬시그린 클렌즈. 케일·브로콜리·양배추·새싹보리·밀·시금치·녹차추출물·과일분말. 식이섬유·식물 영양소 보충. 사과맛 4g × 14스틱.",ingredients:["케일","브로콜리","양배추","새싹보리","밀","시금치","녹차추출물","과일혼합분말"]},
+  "p062":{desc:"웰파인 GMP OEM/ODM 제조사 대표 제품. 강원도 소재 GMP, HACCP, KKMF 할랄, FSSC22000 인증. 콜라겐·칼슘·젤리스틱·액상 건기식 전문.",ingredients:["워밍 식물성 복합체","천연 과일 추출물","기능성 식물성 성분"]},
+  "p063":{desc:"웰파인 B2B 농축 과일 에이드 시리즈. 맞춤 포뮬러, 원료 수급, 통합 품질 관리. 카페·레스토랑·식품 제조용 1.5kg 대용량. OEM/ODM 가능.",ingredients:["농축 과일 추출물 블렌드","천연 과일 폴리페놀","비타민 C","천연 감미료"]},
+  "p064":{desc:"웰파인 한포유 DIETJE - 가르시니아캄보지아+난소화성말토덱스트린 이중 식약처 기능성 젤리(베르가못맛, 20g × 14포). 칼마디 D3+K2: 칼슘+마그네슘+비타민D3+K2(MK-7) 4in1 중년 여성 타겟. OEM/ODM 가능.",ingredients:["가르시니아캄보지아 추출물 (HCA)","난소화성말토덱스트린","칼슘+마그네슘+비타민D3+비타민K2(MK-7)"]},
+  "p065":{desc:"에이치엘사이언스 스킨마스터 피에스트로. P-estro BL Powder(석류, 식약처 승인, 6중 피부 개선 임상) + 영국 DSM 비타민 C + 화이트 토마토 + 저분자 콜라겐 + 엘라스틴 + 우유 단백질. 4g × 30스틱.",ingredients:["P-estro BL Powder (석류, 식약처 승인, 6중 피부 개선)","영국 DSM 비타민 C","화이트 토마토 농축 추출물","저분자 피쉬 콜라겐","엘라스틴 가수분해물","우유 단백질 농축물"]},
+  "p066":{desc:"에이치엘사이언스 스킨마스터 피에스트로 글로우 젤리. P-estro BL Powder+저분자 콜라겐+비타민 C+엘라스틴. 피부 보습·자외선 피부 손상 방어. 20g × 10스틱. 2026년 2월 출시.",ingredients:["P-estro BL Powder (식약처 승인)","저분자 피쉬 콜라겐","비타민 C","엘라스틴 가수분해물"]},
+  "p067":{desc:"에이치엘사이언스 스킨마스터 피에스트로 포우먼 젤리. P-estro HL(터키산 석류, 식약처 승인) + 프락토올리고당+비오틴+블랙커런트+엘라스틴+비타민C+저분자 콜라겐. 갱년기 건강+피부 보습+자외선 방어 3중 기능. 20g × 15스틱.",ingredients:["P-estro HL (터키산 석류, 식약처 승인, 3중 기능)","블랙커런트 농축물","저분자 피쉬 콜라겐","엘라스틴 가수분해물","비오틴","비타민 C","프락토올리고당"]},
+  "p068":{desc:"뉴트리 콜라겐 트리펩타이드 GPX-4™. 자체 효소 가수분해 생산. 총 트리펩타이드 ≥15%, GPH ≥3%, GPX ≥4%. 평균 분자량 1,000Da 미만. 섭취 후 피부 콜라겐·히알루론산 생성 촉진, 관절·모발 건강 지원.",ingredients:["콜라겐 트리펩타이드 GPX-4™ (총 트리펩타이드 ≥15%, GPH ≥3%)","글리-프로-히드록시프롤린 (GPH)","저분자 피쉬 스킨 콜라겐 (<1,000Da)"]},
+  "p069":{desc:"뉴트리 핑거루트(크라차이) 추출 분말. 피노셈브린+판두라틴 A 표준화. 혈당 조절·항비만·항염증 임상 기반. 미국·호주·말레이시아·인도네시아 수출 중. GMP/HACCP 인증.",ingredients:["핑거루트 추출물 (피노셈브린+판두라틴 A)","플라보노이드 복합체","말토덱스트린"]},
+  "p070":{desc:"씨제이웰케어(CJ그룹 계열사) INNERB 글로우 앰플/스틱. CJ 자체 PDRN 기술. 콜라겐 스틱(30포)·앰플(6포) 포맷. 제약 등급 PDRN으로 피부 세포 재생·탄력 개선·미백.",ingredients:["CJ 자체 PDRN (제약 등급)","해양 콜라겐 펩타이드","글루타치온","비타민 C","나이아신아마이드","히알루론산"]},
+  "p071":{desc:"씨제이웰케어 INNERB PDRN Rise. CJ 자체 PDRN 기술 적용 스틱·파우치(14포). DNA 복구·피부 세포 재생·분자 수준 안티에이징. CJ그룹 제약 등급 품질 관리 기반.",ingredients:["CJ 자체 PDRN (폴리데옥시리보뉴클레오타이드)","콜라겐 펩타이드","세포 재생 활성 성분"]},
+  "p072":{desc:"씨제이웰케어 BYCORE 피부면역유산균. CJ 자체 특허 피부면역 유산균+이너뷰티 활성 성분 결합. 피부 장벽 개선·피부 민감성 감소·피부 건강 향상 임상 확인. CJ그룹 제약 수준 제조 적용.",ingredients:["CJ 자체 피부면역 유산균 (특허)","세라마이드","콜라겐 펩타이드","비타민 E","비오틴","아연"]},
 };
 
 // 한국어 성분
@@ -1296,10 +1410,11 @@ function showCompanyDetail(compId){
     </div>`;
 
   // 기업 소개 박스
-  const introHTML = comp.bio ? `
+  const bioText = (currentLang==='kr' && comp.bio_kr) ? comp.bio_kr : comp.bio;
+  const introHTML = bioText ? `
     <div class="company-intro-box">
       <div class="company-intro-text">
-        <p>${comp.bio}</p>
+        <p>${bioText}</p>
         ${comp.badges && comp.badges.length ? `<div class="company-intro-badges">${comp.badges.map(b=>`<span class="company-intro-badge">${b}</span>`).join('')}</div>` : ''}
       </div>
     </div>` : '';
